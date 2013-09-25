@@ -35,10 +35,10 @@ describe('joblint', function () {
     });
 
     describe('.call()', function () {
-        var linter, result;
+        var linter, returnVal;
 
         beforeEach(function () {
-            result = joblint('foo');
+            returnVal = joblint('foo');
             linter = createLinter.firstCall.returnValue;
         });
 
@@ -55,7 +55,7 @@ describe('joblint', function () {
         });
 
         it('should return the result of the lint', function () {
-            assert.strictEqual(result, linter.mockResult);
+            assert.strictEqual(returnVal, linter.mockResult);
         });
 
     });
