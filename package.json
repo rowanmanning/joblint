@@ -1,0 +1,25 @@
+{
+    "name": "joblint",
+    "version": "0.0.0",
+
+    "description": "Lint tech job specs to see whether they're worth your time.",
+    "keywords": [ "job", "lint" ],
+    "author": "Rowan Manning (http://rowanmanning.com/)",
+    "license": "MIT",
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rowanmanning/joblint.git"
+    },
+    "homepage": "https://github.com/rowanmanning/joblint",
+    "bugs": "https://github.com/rowanmanning/joblint/issues",
+
+    "engines": {
+        "node": ">=0.10"
+    },
+
+    "main": "./lib/joblint.js",
+    "bin": {
+        "joblint": "./bin/joblint.js"
+    }
+}
