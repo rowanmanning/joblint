@@ -18,7 +18,11 @@
         "node": ">=0.10"
     },
     "devDependencies": {
-        "jshint": "~2.1"
+        "jshint": "~2.1",
+        "mocha": "~1.13",
+        "mockery": "~1.4",
+        "proclaim": "~2.0",
+        "sinon": "~1.7"
     },
 
     "main": "./lib/joblint.js",
