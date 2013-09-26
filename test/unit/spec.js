@@ -1,14 +1,28 @@
-/* global beforeEach, describe, it */
+/* global afterEach, beforeEach, describe, it */
 /* jshint maxlen: 200 */
 'use strict';
 
 var assert = require('proclaim');
+var mockery = require('mockery');
 
 describe('spec', function () {
-    var createSpec;
+    var createSpec, word;
 
     beforeEach(function () {
+        mockery.enable({
+            useCleanCache: true,
+            warnOnUnregistered: false,
+            warnOnReplace: false
+        });
+
+        word = require('../mock/word');
+        mockery.registerMock('./word', word);
+
         createSpec = require('../../lib/spec');
+    });
+
+    afterEach(function () {
+        mockery.disable();
     });
 
     it('should be a function', function () {
@@ -21,6 +35,8 @@ describe('spec', function () {
         beforeEach(function () {
             body = 'Foo-bar BAZ!_qux 123?';
             words = ['foo', 'bar', 'baz', 'qux', '123'];
+            word.normalizeWord.returnsArg(0);
+            word.splitIntoWords.withArgs(body).returns(words);
             spec = createSpec(body);
         });
 
@@ -35,9 +51,9 @@ describe('spec', function () {
                 assert.strictEqual(spec.body, body);
             });
 
-            it('should have a words property (array) which contains expected words', function () {
+            it('should have a words property (array) which is the result of splitIntoWords called on the body', function () {
                 assert.isArray(spec.words);
-                assert.deepEqual(spec.words, words);
+                assert.strictEqual(spec.words, words);
             });
 
             it('should have a containsWord method', function () {
@@ -48,7 +64,6 @@ describe('spec', function () {
 
                 it('should return true if the spec contains the given word', function () {
                     assert.isTrue(spec.containsWord('foo'));
-                    assert.isTrue(spec.containsWord('f o o'));
                 });
 
                 it('should return false if the spec does not contain the given word', function () {
