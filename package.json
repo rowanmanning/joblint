@@ -17,6 +17,9 @@
     "engines": {
         "node": ">=0.10"
     },
+    "dependencies": {
+        "slugg": "~0.1"
+    },
     "devDependencies": {
         "jshint": "~2.1",
         "mocha": "~1.13",

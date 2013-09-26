@@ -19,9 +19,9 @@ describe('joblint', function () {
         mockery.registerMock('./linter', createLinter);
 
         rules = {
-            example: sinon.spy()
+            sexism: sinon.spy()
         };
-        mockery.registerMock('../rule/example', rules.example);
+        mockery.registerMock('../rule/sexism', rules.sexism);
 
         joblint = require('../../lib/joblint');
     });
@@ -47,7 +47,7 @@ describe('joblint', function () {
         });
 
         it('should load the rules and call with the linter', function () {
-            assert.strictEqual(rules.example.withArgs(linter).callCount, 1);
+            assert.strictEqual(rules.sexism.withArgs(linter).callCount, 1);
         });
 
         it('should lint the passed in body text with the linter', function () {
