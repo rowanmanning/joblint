@@ -19,9 +19,19 @@ describe('joblint', function () {
         mockery.registerMock('./linter', createLinter);
 
         rules = {
-            sexism: sinon.spy()
+            broCulture: sinon.spy(),
+            bubble: sinon.spy(),
+            expectations: sinon.spy(),
+            language: sinon.spy(),
+            sexism: sinon.spy(),
+            tech: sinon.spy()
         };
+        mockery.registerMock('./rule/bro-culture', rules.broCulture);
+        mockery.registerMock('./rule/bubble', rules.bubble);
+        mockery.registerMock('./rule/expectations', rules.expectations);
+        mockery.registerMock('./rule/language', rules.language);
         mockery.registerMock('./rule/sexism', rules.sexism);
+        mockery.registerMock('./rule/tech', rules.tech);
 
         joblint = require('../../lib/joblint');
     });
@@ -47,7 +57,12 @@ describe('joblint', function () {
         });
 
         it('should load the rules and call with the linter', function () {
+            assert.strictEqual(rules.broCulture.withArgs(linter).callCount, 1);
+            assert.strictEqual(rules.bubble.withArgs(linter).callCount, 1);
+            assert.strictEqual(rules.expectations.withArgs(linter).callCount, 1);
+            assert.strictEqual(rules.language.withArgs(linter).callCount, 1);
             assert.strictEqual(rules.sexism.withArgs(linter).callCount, 1);
+            assert.strictEqual(rules.tech.withArgs(linter).callCount, 1);
         });
 
         it('should lint the passed in body text with the linter', function () {

@@ -36,7 +36,15 @@ describe('spec', function () {
             body = 'Foo-bar BAZ!_qux 123?';
             words = ['foo', 'bar', 'baz', 'qux', '123'];
             word.normalizeWord.returnsArg(0);
+
             word.splitIntoWords.withArgs(body).returns(words);
+            word.splitIntoWords.withArgs('foo').returns(['foo']);
+            word.splitIntoWords.withArgs('foo bar').returns(['foo', 'bar']);
+            word.splitIntoWords.withArgs('bar baz').returns(['bar', 'baz']);
+            word.splitIntoWords.withArgs('hello').returns(['hello']);
+            word.splitIntoWords.withArgs('hello world').returns(['hello', 'world']);
+            word.splitIntoWords.withArgs('bar foo').returns(['bar', 'foo']);
+
             spec = createSpec(body);
         });
 
@@ -60,8 +68,16 @@ describe('spec', function () {
                 assert.isFunction(spec.containsWord);
             });
 
+            it('should have a containsPhrase method', function () {
+                assert.isFunction(spec.containsPhrase);
+            });
+
             it('should have a containsAnyOfWords method', function () {
                 assert.isFunction(spec.containsAnyOfWords);
+            });
+
+            it('should have a containsAnyOfPhrases method', function () {
+                assert.isFunction(spec.containsAnyOfPhrases);
             });
 
             describe('.containsWord()', function () {
@@ -76,6 +92,21 @@ describe('spec', function () {
 
             });
 
+            describe('.containsPhrase()', function () {
+
+                it('should return true if the spec contains the given phrase', function () {
+                    assert.isTrue(spec.containsPhrase('foo'));
+                    assert.isTrue(spec.containsPhrase('bar baz'));
+                });
+
+                it('should return false if the spec does not contain the given phrase', function () {
+                    assert.isFalse(spec.containsPhrase('hello'));
+                    assert.isFalse(spec.containsPhrase('hello world'));
+                    assert.isFalse(spec.containsPhrase('bar foo'));
+                });
+
+            });
+
             describe('.containsAnyOfWords()', function () {
 
                 it('should return an array of contained words', function () {
@@ -84,6 +115,18 @@ describe('spec', function () {
 
                 it('should return an empty array if none of the words are found', function () {
                     assert.deepEqual(spec.containsAnyOfWords(['hello', 'world']), []);
+                });
+
+            });
+
+            describe('.containsAnyOfPhrases()', function () {
+
+                it('should return an array of contained phrases', function () {
+                    assert.deepEqual(spec.containsAnyOfPhrases(['foo bar', 'bar baz', 'hello world']), ['foo bar', 'bar baz']);
+                });
+
+                it('should return an empty array if none of the phrases are found', function () {
+                    assert.deepEqual(spec.containsAnyOfPhrases(['bar foo', 'hello world']), []);
                 });
 
             });
