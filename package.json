@@ -2,7 +2,7 @@
     "name": "joblint",
     "version": "0.0.0",
 
-    "description": "Lint tech job specs to see whether they're worth your time.",
+    "description": "Test tech job specs for issues with sexism, culture, expectations, and recruiter fails.",
     "keywords": [ "job", "lint" ],
     "author": "Rowan Manning (http://rowanmanning.com/)",
     "license": "MIT",

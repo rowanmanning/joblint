@@ -1,0 +1,13 @@
+
+# Language/versions
+language: node_js
+node_js:
+  - "0.10"
+
+# Build script
+script: 'make test'
+
+# Notifications
+notifications:
+ email:
+   - notify+joblint@rowanmanning.co.uk
