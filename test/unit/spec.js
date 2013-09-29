@@ -1,5 +1,5 @@
+/* jshint maxstatements: false, maxlen: false */
 /* global afterEach, beforeEach, describe, it */
-/* jshint maxlen: 200 */
 'use strict';
 
 var assert = require('proclaim');
@@ -60,6 +60,10 @@ describe('spec', function () {
                 assert.isFunction(spec.containsWord);
             });
 
+            it('should have a containsAnyOfWords method', function () {
+                assert.isFunction(spec.containsAnyOfWords);
+            });
+
             describe('.containsWord()', function () {
 
                 it('should return true if the spec contains the given word', function () {
@@ -68,6 +72,18 @@ describe('spec', function () {
 
                 it('should return false if the spec does not contain the given word', function () {
                     assert.isFalse(spec.containsWord('hello'));
+                });
+
+            });
+
+            describe('.containsAnyOfWords()', function () {
+
+                it('should return an array of contained words', function () {
+                    assert.deepEqual(spec.containsAnyOfWords(['foo', 'hello', 'bar']), ['foo', 'bar']);
+                });
+
+                it('should return an empty array if none of the words are found', function () {
+                    assert.deepEqual(spec.containsAnyOfWords(['hello', 'world']), []);
                 });
 
             });

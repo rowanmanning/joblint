@@ -138,7 +138,7 @@ describe('result', function () {
 
                 it('should increment the failPoints.culture property by the specified amount', function () {
                     result.addCultureFailPoints(2);
-                    result.addCultureFailPoints(3);
+                    result.addCultureFailPoints(2.5);
                     assert.strictEqual(result.failPoints.culture, 5);
                 });
 
@@ -153,7 +153,7 @@ describe('result', function () {
 
                 it('should increment the failPoints.realism property by the specified amount', function () {
                     result.addRealismFailPoints(2);
-                    result.addRealismFailPoints(3);
+                    result.addRealismFailPoints(2.5);
                     assert.strictEqual(result.failPoints.realism, 5);
                 });
 
@@ -168,7 +168,7 @@ describe('result', function () {
 
                 it('should increment the failPoints.recruiter property by the specified amount', function () {
                     result.addRecruiterFailPoints(2);
-                    result.addRecruiterFailPoints(3);
+                    result.addRecruiterFailPoints(2.5);
                     assert.strictEqual(result.failPoints.recruiter, 5);
                 });
 
@@ -183,7 +183,7 @@ describe('result', function () {
 
                 it('should increment the failPoints.tech property by the specified amount', function () {
                     result.addTechFailPoints(2);
-                    result.addTechFailPoints(3);
+                    result.addTechFailPoints(2.5);
                     assert.strictEqual(result.failPoints.tech, 5);
                 });
 
