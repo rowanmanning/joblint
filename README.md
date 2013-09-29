@@ -4,7 +4,7 @@ Joblint
 
 Test tech job specs for issues with sexism, culture, expectations, and recruiter fails.
 
-**Current Version:** *0.0.0*  
+**Current Version:** *1.0.0*  
 **Build Status:** [![Build Status][travis-img]][travis]  
 **Node Support:** *0.10*  
 
