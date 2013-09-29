@@ -21,7 +21,7 @@ describe('joblint', function () {
         rules = {
             sexism: sinon.spy()
         };
-        mockery.registerMock('../rule/sexism', rules.sexism);
+        mockery.registerMock('./rule/sexism', rules.sexism);
 
         joblint = require('../../lib/joblint');
     });

@@ -12,7 +12,7 @@ lint:
 	@echo "Linting JavaScript..."
 	@./node_modules/.bin/jshint \
 		--config ./test/config/jshint.json \
-		./{bin,lib,rule,test}/*
+		./{bin,lib,test}/*
 
 # Run all tests
 test: test-unit
