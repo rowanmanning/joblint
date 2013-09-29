@@ -96,6 +96,20 @@ $ make test  # Run unit tests
 Please ensure there are no lint errors or failing tests before opening a pull request.
 
 
+Thanks
+------
+
+The following excellent people helped massively with defining the lint rules:
+
+- [Ben Darlow](http://www.kapowaz.net/)
+- [Perry Harlock](http://www.phwebs.co.uk/)
+- [Glynn Phillips](http://www.glynnphillips.co.uk/)
+- [Laura Porter](https://twitter.com/laurabygaslight)
+- [Jude Robinson](https://twitter.com/j0000d)
+- [Luke Stavenhagen](https://twitter.com/stavi)
+- [Andrew Walker](https://twitter.com/moddular)
+
+
 License
 -------
 
