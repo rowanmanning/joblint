@@ -18,7 +18,9 @@
         "node": ">=0.10"
     },
     "dependencies": {
+        "chalk": "0.2",
         "commander": "~2.0",
+        "pad-component": "~0.0",
         "slugg": "~0.1"
     },
     "devDependencies": {
