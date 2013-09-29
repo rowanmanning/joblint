@@ -3,11 +3,48 @@
 
 var fs = require('fs');
 var joblint = require('../lib/joblint');
+var program = require('commander');
+var pkg = require('../package.json');
+var report;
 
-runCommand();
+initProgram();
+
+function initProgram () {
+    program
+        .version(pkg.version)
+        .usage('[options] <file>')
+        .option('-r, --reporter [type]', 'Use the specified reporter [cli]', 'cli')
+        .parse(process.argv);
+    loadReporter(program.reporter);
+    runCommand();
+}
+
+function loadReporter (reporter) {
+    loadLocalReporter(reporter);
+    if (!report) {
+        loadModuleReporter(reporter);
+    }
+    if (!report) {
+        handleInputFailure('Reporter "' + reporter + '" was not found');
+    }
+}
+
+function loadLocalReporter (reporter) {
+    try {
+        report = require('../lib/report/' + reporter);
+    }
+    catch (err) {}
+}
+
+function loadModuleReporter (reporter) {
+    try {
+        report = require(reporter);
+    }
+    catch (err) {}
+}
 
 function runCommand () {
-    if (processHasArgs()) {
+    if (program.args.length) {
         runCommandOnFile(process.argv[2]);
     } else {
         runCommandOnStdIn();
@@ -35,11 +72,7 @@ function handleInputFailure (msg) {
 
 function handleInputSuccess (data) {
     var result = joblint(data);
-    console.log(result);
-}
-
-function processHasArgs () {
-    return (process.argv.length > 2);
+    report(result);
 }
 
 function captureStdIn (done) {

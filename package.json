@@ -18,6 +18,7 @@
         "node": ">=0.10"
     },
     "dependencies": {
+        "commander": "~2.0",
         "slugg": "~0.1"
     },
     "devDependencies": {
