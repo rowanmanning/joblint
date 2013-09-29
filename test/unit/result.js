@@ -3,6 +3,7 @@
 'use strict';
 
 var assert = require('proclaim');
+var sinon = require('sinon');
 
 describe('result', function () {
     var createResult;
@@ -74,6 +75,18 @@ describe('result', function () {
 
             it('should have an addTechFailPoints method', function () {
                 assert.isFunction(result.addTechFailPoints);
+            });
+
+            it('should have a hasMessages method', function () {
+                assert.isFunction(result.hasMessages);
+            });
+
+            it('should have a hasFailPoints method', function () {
+                assert.isFunction(result.hasFailPoints);
+            });
+
+            it('should have an isClean method', function () {
+                assert.isFunction(result.isClean);
             });
 
             describe('.addError()', function () {
@@ -177,6 +190,79 @@ describe('result', function () {
                 it('should increment the failPoints.tech property by one when called with no arguments', function () {
                     result.addTechFailPoints();
                     assert.strictEqual(result.failPoints.tech, 1);
+                });
+
+            });
+
+            describe('.hasMessages()', function () {
+
+                it('should return true if any errors, warnings or notices are present', function () {
+                    result.errors = ['foo'];
+                    result.warnings = [];
+                    result.notices = [];
+                    assert.isTrue(result.hasMessages());
+
+                    result.errors = [];
+                    result.warnings = ['foo'];
+                    result.notices = [];
+                    assert.isTrue(result.hasMessages());
+
+                    result.errors = [];
+                    result.warnings = [];
+                    result.notices = ['foo'];
+                    assert.isTrue(result.hasMessages());
+
+                    result.errors = ['foo'];
+                    result.warnings = ['bar'];
+                    result.notices = ['baz'];
+                    assert.isTrue(result.hasMessages());
+                });
+
+                it('should return false if there are no errors, warnings or notices present', function () {
+                    assert.isFalse(result.hasMessages());
+                });
+
+            });
+
+            describe('.hasFailPoints()', function () {
+
+                it('should return true if any fail points are present', function () {
+                    result.failPoints = {culture: 1, realism: 0, recruiter: 0, tech: 0};
+                    assert.isTrue(result.hasFailPoints());
+
+                    result.failPoints = {culture: 0, realism: 1, recruiter: 0, tech: 0};
+                    assert.isTrue(result.hasFailPoints());
+
+                    result.failPoints = {culture: 0, realism: 0, recruiter: 1, tech: 0};
+                    assert.isTrue(result.hasFailPoints());
+
+                    result.failPoints = {culture: 0, realism: 0, recruiter: 0, tech: 1};
+                    assert.isTrue(result.hasFailPoints());
+                });
+
+                it('should return false if there are no fail points present', function () {
+                    assert.isFalse(result.hasFailPoints());
+                });
+
+            });
+
+            describe('.isClean()', function () {
+
+                it('should return true if there are no errors or fail points present', function () {
+                    assert.isTrue(result.isClean());
+                });
+
+                it('should return false if there are no fail points present', function () {
+                    result.hasMessages = sinon.stub();
+                    result.hasFailPoints = sinon.stub();
+
+                    result.hasMessages.returns(true);
+                    result.hasFailPoints.returns(false);
+                    assert.isFalse(result.isClean());
+
+                    result.hasMessages.returns(false);
+                    result.hasFailPoints.returns(true);
+                    assert.isFalse(result.isClean());
                 });
 
             });
