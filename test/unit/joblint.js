@@ -58,12 +58,17 @@ describe('joblint', function () {
         });
 
         it('should load the rules and call with the linter', function () {
-            assert.strictEqual(rules.broCulture.withArgs(linter).callCount, 1);
-            assert.strictEqual(rules.bubble.withArgs(linter).callCount, 1);
-            assert.strictEqual(rules.expectations.withArgs(linter).callCount, 1);
-            assert.strictEqual(rules.language.withArgs(linter).callCount, 1);
-            assert.strictEqual(rules.sexism.withArgs(linter).callCount, 1);
-            assert.strictEqual(rules.tech.withArgs(linter).callCount, 1);
+            [
+                'broCulture',
+                'bubble',
+                'expectations',
+                'language',
+                'sexism',
+                'tech'
+            ].forEach(function (rule) {
+                rules[rule](linter);
+                assert.strictEqual(rules[rule].withArgs(linter).callCount, 1);
+            });
         });
 
         it('should lint the passed in body text with the linter', function () {
