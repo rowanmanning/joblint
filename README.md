@@ -1,4 +1,3 @@
-
 Joblint
 =======
 
@@ -11,6 +10,9 @@ Test tech job specs for issues with sexism, culture, expectations, and recruiter
 ```sh
 $ joblint path/to/spec.txt
 ```
+
+![Joblint output](https://f.cloud.github.com/assets/138944/1235001/20881c1e-2996-11e3-9712-332325333766.png)
+
 
 
 Installing
