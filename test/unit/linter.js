@@ -1,3 +1,4 @@
+/* jshint maxstatements: false, maxlen: false */
 /* global afterEach, beforeEach, describe, it */
 'use strict';
 

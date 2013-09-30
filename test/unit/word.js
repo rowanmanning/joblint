@@ -1,5 +1,5 @@
+/* jshint maxstatements: false, maxlen: false */
 /* global beforeEach, describe, it */
-/* jshint maxlen: 200 */
 'use strict';
 
 var assert = require('proclaim');
