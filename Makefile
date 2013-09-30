@@ -1,11 +1,19 @@
 
 # Group targets
-all: deps start-dev
+all: deps lint start-dev
 
 # Install dependencies
 deps:
 	@echo "Installing dependencies..."
 	@npm install
+
+# Lint JavaScript
+lint:
+	@echo "Linting JavaScript..."
+	@./node_modules/.bin/jshint \
+		--config ./test/config/jshint.json \
+		--exclude ./node_modules \
+		*.js **/*.js
 
 # Start the application
 start:
