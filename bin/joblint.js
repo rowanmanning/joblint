@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
-var fs = require('fs');
-var joblint = require('../lib/joblint');
-var program = require('commander');
-var pkg = require('../package.json');
-var report;
+var fs = require('fs'),
+    joblint = require('../lib/joblint'),
+    path = require('path'),
+    program = require('commander'),
+    pkg = require('../package.json'),
+    report;
 
 initProgram();
 
@@ -14,6 +15,9 @@ function initProgram () {
         .version(pkg.version)
         .usage('[options] <file>')
         .option('-r, --reporter [type]', 'Use the specified reporter [cli]', 'cli')
+        .option('-R, --rules [directory]',
+                'Use the specified directory for rules [./lib/rule]',
+                path.join(path.dirname(path.dirname(module.filename)), './lib/rule'))
         .parse(process.argv);
     loadReporter(program.reporter);
     runCommand();
@@ -71,7 +75,7 @@ function handleInputFailure (msg) {
 }
 
 function handleInputSuccess (data) {
-    var result = joblint(data);
+    var result = joblint(program.rules, data);
     report(result);
 }
 

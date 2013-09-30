@@ -43,6 +43,7 @@ $ joblint --help
     -h, --help             output usage information
     -V, --version          output the version number
     -r, --reporter [type]  Use the specified reporter [cli]
+    -R, --rules [directory]  Use the specified directory for rules [./lib/rule]
 
 ```
 
