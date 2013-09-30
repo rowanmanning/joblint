@@ -24,7 +24,7 @@ Installing
 Joblint runs on [Node.js][node], and is installed with npm:
 
 ```sh
-$ npm install joblint
+$ npm install joblint -g
 ```
 
 
