@@ -104,7 +104,7 @@ Please ensure there are no lint errors or failing tests before opening a pull re
 Thanks
 ------
 
-The following excellent people helped massively with defining the lint rules:
+The following excellent people helped massively with defining the original lint rules:
 
 - [Ben Darlow](http://www.kapowaz.net/)
 - [Perry Harlock](http://www.phwebs.co.uk/)
@@ -114,6 +114,8 @@ The following excellent people helped massively with defining the lint rules:
 - [Luke Stavenhagen](https://twitter.com/stavi)
 - [Andrew Walker](https://twitter.com/moddular)
 
+Also, there are plenty of [great contributors][contrib] to the library.
+
 
 License
 -------
@@ -122,6 +124,7 @@ Joblint is licensed under the [MIT][mit] license.
 
 
 
+[contrib]: https://github.com/rowanmanning/joblint/graphs/contributors
 [mit]: http://opensource.org/licenses/mit-license.php
 [node]: http://nodejs.org/
 [travis]: https://travis-ci.org/rowanmanning/joblint
