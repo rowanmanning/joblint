@@ -3,6 +3,9 @@ Joblint
 
 Test tech job specs for issues with sexism, culture, expectations, and recruiter fails.
 
+**Writing a job spec?** Use Joblint to make your job attractive to a much broader range of candidates.  
+**Getting swamped in job specs?** Use Joblint to filter out the bad ones.
+
 **Current Version:** *1.0.0*  
 **Build Status:** [![Build Status][travis-img]][travis]  
 **Node Support:** *0.10*  
