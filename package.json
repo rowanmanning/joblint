@@ -1,0 +1,19 @@
+{
+    "name": "joblint",
+    "mod-project-name": "joblint",
+    "version": "0.0.0",
+    "private": true,
+
+    "engines" : {
+        "node": "0.10.x"
+    },
+    "dependencies": {
+        "express": "~3.4",
+        "joblint": "~1.0"
+    },
+    "devDependencies": {
+        "supervisor": "~0.5"
+    },
+
+    "main": "./app.js"
+}
