@@ -1,4 +1,12 @@
 
-<h1>Page Title</h1>
+{{#content title}}Joblint{{/content}}
 
-<p>Page content.</p>
+<h1>Joblint</h1>
+
+<p>Paste a job spec below:</p>
+
+<form action="/" method="post">
+    <label for="spec-input">Job Spec:</label><br/>
+    <textarea name="spec" id="spec-input"></textarea><br/>
+    <input type="submit" value="Lint"/>
+</form>

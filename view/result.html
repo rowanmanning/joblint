@@ -1,0 +1,31 @@
+
+{{#content title}}Joblint Results{{/content}}
+
+<h1>Joblint Results</h1>
+
+<dl>
+    <dt>Culture Fails</dt>
+    <dd>{{result.failPoints.culture}}</dd>
+    <dt>Realism Fails</dt>
+    <dd>{{result.failPoints.realism}}</dd>
+    <dt>Recruiter Fails</dt>
+    <dd>{{result.failPoints.recruiter}}</dd>
+    <dt>Tech Fails</dt>
+    <dd>{{result.failPoints.tech}}</dd>
+</dl>
+
+<ul>
+    {{#result}}
+        {{#errors}}
+            <li>{{.}} (error)</li>
+        {{/errors}}
+        {{#warnings}}
+            <li>{{.}} (warning)</li>
+        {{/warnings}}
+        {{#notices}}
+            <li>{{.}} (notice)</li>
+        {{/notices}}
+    {{/result}}
+</ul>
+
+<a href="/">Try again</a>
