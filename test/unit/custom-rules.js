@@ -13,7 +13,7 @@ describe('custom rules', function () {
             done();
         });
     });
-    it('should be possible to add multiple ad linter creation', function () {
+    it('should be possible to add multiple at linter creation', function () {
         var added = 0;
 
         function inc(linter) {
