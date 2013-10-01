@@ -63,7 +63,7 @@ function runCommandOnFile (fileName) {
 
 function runCommandOnStdIn () {
     if (isTty(process.stdin)) {
-        handleInputFailure('Input stream not detected');
+        program.help();
     } else {
         captureStdIn(handleInputSuccess);
     }
