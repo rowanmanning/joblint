@@ -20,25 +20,27 @@ function initProgram () {
 }
 
 function loadReporter (reporter) {
-    loadLocalReporter(reporter);
-    if (!report) {
-        loadModuleReporter(reporter);
-    }
+    report = getReporter(reporter);
     if (!report) {
         handleInputFailure('Reporter "' + reporter + '" was not found');
     }
 }
 
-function loadLocalReporter (reporter) {
+function getReporter (reporter) {
+    var path = getLocalReporterPath(reporter) || getModuleReporterPath(reporter);
+    return require(path);
+}
+
+function getLocalReporterPath (reporter) {
     try {
-        report = require('../lib/report/' + reporter);
+        return require.resolve('../lib/report/' + reporter);
     }
     catch (err) {}
 }
 
-function loadModuleReporter (reporter) {
+function getModuleReporterPath (reporter) {
     try {
-        report = require(reporter);
+        return require.resolve(reporter);
     }
     catch (err) {}
 }
