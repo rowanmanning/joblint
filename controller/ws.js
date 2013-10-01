@@ -21,7 +21,7 @@ function defineController (app) {
 }
 
 function requireUrlEncodedPostBody (req, res, next) {
-    if (req.headers['content-type'] !== 'application/x-www-form-urlencoded') {
+    if (!req.is('application/x-www-form-urlencoded')) {
         return res.jsonp(400, {
             error: 'Request must have a content-type of "application/x-www-form-urlencoded"'
         });
