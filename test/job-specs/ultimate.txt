@@ -1,7 +1,7 @@
 
-We're looking for a great VBScript developer who has experience with Microsoft Frontpage. We use Dreamweaver to develop most of our sites, so experience with that is essential. If you can't use Dreamweaver, then you're probably a shit developer anyway.
+We're looking for a great VBScript developer who has experience building sexy sites with Microsoft Frontpage. We use Dreamweaver to develop most of our sites, so experience with that is essential. If you can't use Dreamweaver, then you're probably a shit developer anyway.
 
-We'd like a candidate who is at the top of their game, and will be able to hit the ground running. We're a cutting-edge company at the forefront of most industries. 
+We'd like a candidate who is at the top of their game, and will be able to hit the ground running. We're a cutting-edge company at the forefront of most industries.
 
 let's bro down and crush code, web ninjas.
 Then we can drink beer and play pool!
