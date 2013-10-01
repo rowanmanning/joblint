@@ -30,11 +30,11 @@ function configureExpress (app) {
 function configureViews (app) {
     app.set('views', __dirname + '/view');
     app.engine('html', hbs.express3({
+        partialsDir: __dirname + '/view/partial',
         contentHelperName: 'content',
         defaultLayout: __dirname + '/view/layout/default.html',
         extname: 'html',
-        layoutsDir: __dirname + '/view/layout',
-        partialsDir: __dirname + '/view/partial'
+        layoutsDir: __dirname + '/view/layout'
     }));
     app.set('view engine', 'html');
 }
