@@ -1,6 +1,6 @@
-Joblint
-[![Clone joblint in Koding](http://kbutton.org/clone.png?v1380617493113)](http://kbutton.org/rowanmanning/joblint)
+Joblint [![Clone joblint in Koding](http://kbutton.org/clone.png?v1380617493113)](http://kbutton.org/rowanmanning/joblint)
 =======
+
 
 Test tech job specs for issues with sexism, culture, expectations, and recruiter fails.
 
