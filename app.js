@@ -47,6 +47,7 @@ function setViewLocals (app) {
 }
 
 function loadControllers (app) {
+    require('./controller/developer')(app);
     require('./controller/index')(app);
     require('./controller/ws')(app);
 }
