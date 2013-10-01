@@ -5,6 +5,11 @@ var joblint = require('joblint');
 module.exports = defineController;
 
 function defineController (app) {
+    app.all('/ws', function (req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+        next();
+    });
     app.post('/ws', requireUrlEncodedPostBody, requireUnemptyJobSpec, function (req, res) {
         res.jsonp(joblint(req.body.spec));
     });
