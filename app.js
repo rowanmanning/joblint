@@ -1,15 +1,18 @@
 'use strict';
 
-var express = require('express');
 var config = {
     port: process.env.PORT || 3000
 };
+var express = require('express');
+var hbs = require('express-hbs');
 
 initApp();
 
 function initApp () {
     var app = express();
     configureExpress(app);
+    configureViews(app);
+    setViewLocals(app);
     loadControllers(app);
     startApp(app);
 }
@@ -21,6 +24,25 @@ function configureExpress (app) {
     }));
     app.use(express.compress());
     app.use(express.urlencoded());
+}
+
+function configureViews (app) {
+    app.set('views', __dirname + '/view');
+    app.engine('html', hbs.express3({
+        contentHelperName: 'content',
+        defaultLayout: __dirname + '/view/layout/default.html',
+        extname: 'html',
+        layoutsDir: __dirname + '/view/layout',
+        partialsDir: __dirname + '/view/partial'
+    }));
+    app.set('view engine', 'html');
+}
+
+function setViewLocals (app) {
+    app.locals({
+        lang: 'en',
+        year: (new Date()).getFullYear()
+    });
 }
 
 function loadControllers (app) {
