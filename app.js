@@ -24,6 +24,7 @@ function configureExpress (app) {
     }));
     app.use(express.compress());
     app.use(express.urlencoded());
+    app.use(express.json());
 }
 
 function configureViews (app) {

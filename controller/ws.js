@@ -6,8 +6,8 @@ module.exports = defineController;
 
 function defineController (app) {
     app.all('/ws', function (req, res, next) {
+        res.header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With');
         res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Headers', 'X-Requested-With');
         next();
     });
     app.post('/ws', requireUrlEncodedPostBody, requireUnemptyJobSpec, function (req, res) {
@@ -21,9 +21,9 @@ function defineController (app) {
 }
 
 function requireUrlEncodedPostBody (req, res, next) {
-    if (!req.is('application/x-www-form-urlencoded')) {
+    if (!req.is('application/json')) {
         return res.jsonp(400, {
-            error: 'Request must have a content-type of "application/x-www-form-urlencoded"'
+            error: 'Request must have a content-type of "application/json"'
         });
     }
     next();
