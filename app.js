@@ -20,10 +20,12 @@ function configureExpress (app) {
         maxAge: (process.env.NODE_ENV === 'production' ? 604800 : 0)
     }));
     app.use(express.compress());
+    app.use(express.urlencoded());
 }
 
 function loadControllers (app) {
     require('./controller/index')(app);
+    require('./controller/ws')(app);
 }
 
 function startApp (app) {
