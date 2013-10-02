@@ -1,12 +1,8 @@
 
 {{#content title}}Joblint{{/content}}
 
-<h1>Joblint</h1>
-
-<p>Paste a job spec below:</p>
-
-<form action="/" method="post">
-    <label for="spec-input">Job Spec:</label><br/>
-    <textarea name="spec" id="spec-input"></textarea><br/>
-    <input type="submit" value="Lint"/>
+<form action="/" method="post" class="container">
+    <label class="lead" for="spec-input">Paste your job spec below</label>
+    <textarea name="spec" id="spec-input"></textarea>
+    <input class="btn" type="submit" value="Lint"/>
 </form>

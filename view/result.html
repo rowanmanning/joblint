@@ -1,31 +1,33 @@
 
 {{#content title}}Joblint Results{{/content}}
 
-<h1>Joblint Results</h1>
+<div class="container">
+    <h2 class="ruled">Joblint Results</h2>
 
-<dl>
-    <dt>Culture Fails</dt>
-    <dd>{{result.failPoints.culture}}</dd>
-    <dt>Realism Fails</dt>
-    <dd>{{result.failPoints.realism}}</dd>
-    <dt>Recruiter Fails</dt>
-    <dd>{{result.failPoints.recruiter}}</dd>
-    <dt>Tech Fails</dt>
-    <dd>{{result.failPoints.tech}}</dd>
-</dl>
+    <dl class="bar-chart">
+        <dt>Culture Fails ({{result.failPoints.culture}})</dt>
+        <dd class="bar" style="width:100%">{{result.failPoints.culture}}</dd>
+        <dt>Realism Fails ({{result.failPoints.realism}})</dt>
+        <dd class="bar" style="width:83%">{{result.failPoints.realism}}</dd>
+        <dt>Recruiter Fails ({{result.failPoints.recruiter}})</dt>
+        <dd class="bar" style="width:66%">{{result.failPoints.recruiter}}</dd>
+        <dt>Tech Fails ({{result.failPoints.tech}})</dt>
+        <dd class="bar" style="width:50%">{{result.failPoints.tech}}</dd>
+    </dl>
 
-<ul>
-    {{#result}}
-        {{#errors}}
-            <li>{{.}} (error)</li>
-        {{/errors}}
-        {{#warnings}}
-            <li>{{.}} (warning)</li>
-        {{/warnings}}
-        {{#notices}}
-            <li>{{.}} (notice)</li>
-        {{/notices}}
-    {{/result}}
-</ul>
+    <ul class="results">
+        {{#result}}
+            {{#errors}}
+                <li class="error"><span class="description">{{.}}</span> (error)</li>
+            {{/errors}}
+            {{#warnings}}
+                <li class="warning"><span class="description">{{.}}</span> (warning)</li>
+            {{/warnings}}
+            {{#notices}}
+                <li class="notice"><span class="description">{{.}}</span> (notice)</li>
+            {{/notices}}
+        {{/result}}
+    </ul>
 
-<a href="/">Try again</a>
+    <a class="btn" href="/">Try again</a>
+</div>

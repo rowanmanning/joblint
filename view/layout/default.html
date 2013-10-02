@@ -5,13 +5,21 @@
     <meta charset="utf-8"/>
     <title>{{{block title}}}</title>
 
+     <link rel="stylesheet" href="/css/main.css"/>
+
     <!-- TODO: remove when ready to go live -->
     <meta name="robots" value="noindex"/>
 
 </head>
 <body>
 
-    {{{body}}}
+    {{> header}}
+
+	<section>
+		<div class="section main-content">
+		    {{{body}}}
+		</div>
+	</section>
 
     {{> footer}}
 

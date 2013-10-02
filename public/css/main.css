@@ -1,0 +1,183 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body {
+    background-color:#504A46;
+    font-size:20px;
+    line-height: 1.5;
+    font-family: "Open Sans", "Helvetica-Neue", "Helvetica", Arial, sans-serif;
+    color:#f1f1f1;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    line-height:1.2;
+    font-weight:bold;
+    margin-top:10px;
+}
+h1, .h1, h2, .h2 {
+    text-transform: uppercase;
+}
+h1, .h1 {
+    font-size:50px;
+    margin-bottom:25px;
+    color:#c8b0e8;
+}
+h2, .h2 {
+    font-size:40px;
+    margin-bottom:40px;
+}
+h3, .h3 {
+    font-size:34px;
+    margin-bottom:15px;
+}
+p {
+    margin-bottom:35px;
+}
+code {
+    white-space: nowrap;
+    color: #83C7AE;
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    text-transform:lowercase;
+}
+pre {
+    display: block;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #C6C0BD;
+    border: solid 3px #F1F1F1;
+    color: #555555;
+    padding:20px;
+    font-size:16px;
+    line-height:1.5;
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    margin-bottom:50px;
+}
+a {
+    color:#BD9FE6;
+    text-decoration:none;
+}
+a:hover, a:active, a:focus {
+    color:#D5BFF2;
+}
+ul {
+    padding-left:20px;
+    margin-bottom:60px;
+}
+li {
+    list-style-type: disc;
+    padding-left:10px;
+    margin-bottom:10px;
+}
+li:last-child {
+    margin-bottom:0;
+}
+label {
+    text-transform:uppercase;
+}
+textarea {
+    font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
+    background-color: #F1F1F1;
+    border: solid 3px #F1F1F1;
+    box-shadow: none;
+    color: #555555;
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    height: 400px;
+    padding: 1%;
+    transition: border-color 0.15s ease-in-out 0s;
+    -webkit-transition: border-color 0.15s ease-in-out 0s;
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom:30px;
+    margin-top:20px;
+}
+textarea:focus {
+    border:solid 3px #C8B0E8;
+    outline: 0 none;
+}
+small {
+    font-size:16px;
+}
+.pull-right {
+    float:right;
+}
+.pull-left {
+    float:left;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+.lead {
+    font-weight:bold;
+    font-size:30px;
+    line-height:1.333;
+}
+.header, .footer {
+    padding:40px 0;
+}
+.container {
+    width:80%;
+    margin:0 auto;
+}
+.main-content {
+    padding:50px 0 50px 0;
+    background-color:#97857E;
+}
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 26px;
+    line-height: 1.42857;
+    padding:14px 22px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border:2px solid #AD8FDC;
+    color:#504A46;
+    background-color:#C8B0E8;
+    text-transform:uppercase;
+    font-weight:bold;
+    transition: opacity 0.15s ease-in-out 0s;
+    -webkit-transition: opacity 0.15s ease-in-out 0s;
+    opacity:1;
+}
+.btn:hover {
+    opacity:0.8;
+    text-decoration:none;
+    color:#504A46;
+}
+.bar-chart {
+    margin-bottom:60px;
+    width:80%;
+}
+.bar {
+    background-color:#C8B0E8;
+    color:#C8B0E8;
+    height:40px;
+    margin-bottom:20px;
+}
+.bar:last-child {
+    margin-bottom:0;
+}
+.error {
+    color:#EF9382;
+}
+.warning {
+    color:#FBEE9E;
+}
+.notice {
+    color:#BFBDBD;
+}
+.description {
+    color:#F1F1F1;
+}
+.nav {
+    margin-bottom:0;
+}
