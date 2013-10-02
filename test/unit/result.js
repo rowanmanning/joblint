@@ -49,6 +49,14 @@ describe('result', function () {
                 assert.strictEqual(result.failPoints.tech, 0);
             });
 
+            it('should have a setCurrentRule method', function () {
+                assert.isFunction(result.setCurrentRule);
+            });
+
+            it('should have a clearCurrentRule method', function () {
+                assert.isFunction(result.clearCurrentRule);
+            });
+
             it('should have an addError method', function () {
                 assert.isFunction(result.addError);
             });
@@ -89,17 +97,46 @@ describe('result', function () {
                 assert.isFunction(result.isClean);
             });
 
+            describe('.setCurrentRule()', function () {
+                var rule;
+
+                beforeEach(function () {
+                    rule = {};
+                    result.setCurrentRule(rule);
+                });
+
+                it('should set the currentRule property', function () {
+                    assert.strictEqual(result.currentRule, rule);
+                });
+
+            });
+
+            describe('.clearCurrentRule()', function () {
+
+                beforeEach(function () {
+                    result.setCurrentRule({});
+                    result.clearCurrentRule();
+                });
+
+                it('should delete the currentRule property', function () {
+                    assert.isUndefined(result.currentRule);
+                });
+
+            });
+
             describe('.addError()', function () {
 
                 beforeEach(function () {
+                    result.setCurrentRule({desc: 'hello'});
                     result.addError('foo');
                     result.addError('bar');
+                    result.clearCurrentRule();
                 });
 
                 it('should add the passed in messages to the errors property', function () {
                     assert.lengthEquals(result.errors, 2);
-                    assert.strictEqual(result.errors[0], 'foo');
-                    assert.strictEqual(result.errors[1], 'bar');
+                    assert.deepEqual(result.errors[0], {message: 'foo', detail: 'hello'});
+                    assert.deepEqual(result.errors[1], {message: 'bar', detail: 'hello'});
                 });
 
             });
@@ -107,14 +144,16 @@ describe('result', function () {
             describe('.addWarning()', function () {
 
                 beforeEach(function () {
+                    result.setCurrentRule({desc: 'hello'});
                     result.addWarning('foo');
                     result.addWarning('bar');
+                    result.clearCurrentRule();
                 });
 
                 it('should add the passed in messages to the warnings property', function () {
                     assert.lengthEquals(result.warnings, 2);
-                    assert.strictEqual(result.warnings[0], 'foo');
-                    assert.strictEqual(result.warnings[1], 'bar');
+                    assert.deepEqual(result.warnings[0], {message: 'foo', detail: 'hello'});
+                    assert.deepEqual(result.warnings[1], {message: 'bar', detail: 'hello'});
                 });
 
             });
@@ -122,14 +161,16 @@ describe('result', function () {
             describe('.addNotice()', function () {
 
                 beforeEach(function () {
+                    result.setCurrentRule({desc: 'hello'});
                     result.addNotice('foo');
                     result.addNotice('bar');
+                    result.clearCurrentRule();
                 });
 
                 it('should add the passed in messages to the notices property', function () {
                     assert.lengthEquals(result.notices, 2);
-                    assert.strictEqual(result.notices[0], 'foo');
-                    assert.strictEqual(result.notices[1], 'bar');
+                    assert.deepEqual(result.notices[0], {message: 'foo', detail: 'hello'});
+                    assert.deepEqual(result.notices[1], {message: 'bar', detail: 'hello'});
                 });
 
             });
