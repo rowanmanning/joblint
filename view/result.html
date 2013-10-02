@@ -19,13 +19,22 @@
 <ul class="results">
     {{#result}}
         {{#errors}}
-            <li class="error"><span class="description">{{message}}</span> (error)</li>
+            <li class="error">
+                <p><span class="description">{{message}}</span> (error)</p>
+                <p>{{detail}}</p>
+            </li>
         {{/errors}}
         {{#warnings}}
-            <li class="warning"><span class="description">{{message}}</span> (warning)</li>
+            <li class="warning">
+                <p><span class="description">{{message}}</span> (warning)</p>
+                <p>{{detail}}</p>
+            </li>
         {{/warnings}}
         {{#notices}}
-            <li class="notice"><span class="description">{{message}}</span> (notice)</li>
+            <li class="notice">
+                <p><span class="description">{{message}}</span> (notice)</p>
+                <p>{{detail}}</p>
+            </li>
         {{/notices}}
     {{/result}}
 </ul>
