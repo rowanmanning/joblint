@@ -1,38 +1,37 @@
 
-{{#content title}}Joblint Web Service Documentation{{/content}}
+{{#content "title"}}Joblint Web Service Documentation{{/content}}
 
-<div class="container">
-    <h1>Joblint Web Service Documentation</h1>
-
-    <p>
+{{#content "header"}}
+    <h1 class="heading">Joblint Web Service Documentation</h1>
+    <p class="lead">
         The Joblint web service offers a simple way to lint your job specs without
         installing on your local machine. There is a single endpoint, and there
         aren't any rate limits (at the moment) – just be nice please :)
     </p>
+{{/content}}
 
-    <h2><code>POST http://joblint.org/ws</code></h2>
+<h2>POST http://joblint.org/ws</h2>
 
-    <h3>Request</h3>
+<h3>Request</h3>
 
-    <pre>POST http://joblint.org/ws HTTP/1.1
-    Content-Type: application/json
+<pre>POST http://joblint.org/ws HTTP/1.1
+Content-Type: application/json
 
-    {spec:"Your job spec goes here"}</pre>
+{spec:"Your job spec goes here"}</pre>
 
-    <h3>Response</h3>
+<h3>Response</h3>
 
-    <pre>HTTP/1.1 200 OK
-    Content-Type: application/json; charset=utf-8
+<pre>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
 
-    {
-        "failPoints": {
-            "culture": 0,
-            "realism": 0,
-            "recruiter": 0,
-            "tech": 0
-        },
-        "errors": [ ... ],
-        "warnings": [ ... ],
-        "notices": [ ... ]
-    }</pre>
-</div>
+{
+    "failPoints": {
+        "culture": 0,
+        "realism": 0,
+        "recruiter": 0,
+        "tech": 0
+    },
+    "errors": [ ... ],
+    "warnings": [ ... ],
+    "notices": [ ... ]
+}</pre>

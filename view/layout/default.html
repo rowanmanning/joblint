@@ -3,9 +3,9 @@
 <head>
 
     <meta charset="utf-8"/>
-    <title>{{{block title}}}</title>
+    <title>{{{block "title"}}}</title>
 
-     <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
 
     <!-- TODO: remove when ready to go live -->
     <meta name="robots" value="noindex"/>
@@ -15,11 +15,13 @@
 
     {{> header}}
 
-	<section>
-		<div class="section main-content">
-		    {{{body}}}
-		</div>
-	</section>
+    <section>
+        <div class="section main-content">
+            <div class="container">
+                {{{body}}}
+            </div>
+        </div>
+    </section>
 
     {{> footer}}
 
