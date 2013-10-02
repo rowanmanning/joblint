@@ -21,7 +21,8 @@
         "chalk": "0.2",
         "commander": "~2.0",
         "pad-component": "~0.0",
-        "slugg": "~0.1"
+        "slugg": "~0.1",
+        "wordwrap": "~0.0"
     },
     "devDependencies": {
         "jshint": "~2.1",

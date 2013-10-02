@@ -13,7 +13,16 @@ function initProgram () {
     program
         .version(pkg.version)
         .usage('[options] <file>')
-        .option('-r, --reporter [type]', 'Use the specified reporter [cli]', 'cli')
+        .option(
+            '-r, --reporter [type]',
+            'Use the specified reporter [cli]',
+            'cli'
+        )
+        .option(
+            '-v, --verbose',
+            'Output verbose rule descriptions (if the reporter supports them)',
+            false
+        )
         .parse(process.argv);
     loadReporter(program.reporter);
     runCommand();
@@ -45,7 +54,7 @@ function loadModuleReporter (reporter) {
 
 function runCommand () {
     if (program.args.length) {
-        runCommandOnFile(process.argv[2]);
+        runCommandOnFile(program.args[0]);
     } else {
         runCommandOnStdIn();
     }
@@ -76,7 +85,9 @@ function handleInputFailure (msg) {
 
 function handleInputSuccess (data) {
     var result = joblint(data);
-    report(result);
+    report(result, {
+        verbose: program.verbose
+    });
 }
 
 function captureStdIn (done) {
