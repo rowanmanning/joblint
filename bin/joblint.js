@@ -28,7 +28,9 @@ function loadReporter (reporter) {
 
 function getReporter (reporter) {
     var path = getLocalReporterPath(reporter) || getModuleReporterPath(reporter);
-    return require(path);
+    if (path) {
+        return require(path);
+    }
 }
 
 function getLocalReporterPath (reporter) {
