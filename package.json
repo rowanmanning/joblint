@@ -22,7 +22,7 @@
     "dependencies": {
         "express": "~3.4",
         "express-hbs": "~0.1",
-        "joblint": "~1.1"
+        "joblint": "~1.2"
     },
     "devDependencies": {
         "jshint": "~2.1",
