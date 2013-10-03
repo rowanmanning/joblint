@@ -1,6 +1,6 @@
 {
     "name": "joblint",
-    "version": "1.1.0",
+    "version": "1.2.0",
 
     "description": "Test tech job specs for issues with sexism, culture, expectations, and recruiter fails.",
     "keywords": [ "job", "lint" ],
