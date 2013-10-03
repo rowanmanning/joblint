@@ -41,6 +41,7 @@ function configureViews (app) {
 
 function setViewLocals (app) {
     app.locals({
+        isProduction: (process.env.NODE_ENV === 'production'),
         lang: 'en',
         year: (new Date()).getFullYear()
     });
