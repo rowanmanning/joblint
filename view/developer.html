@@ -2,18 +2,15 @@
 {{#content "title"}}Joblint Web Service Documentation{{/content}}
 {{#content "description"}}Documentation for developers intending to use the Joblint.org web service.{{/content}}
 
-{{#content "header"}}
-    <h1 class="heading">Joblint Web Service Documentation</h1>
-    <p class="lead">
-        The Joblint web service offers a simple way to lint your job specs without
-        installing on your local machine. There is a single endpoint, and there
-        aren't any rate limits (at the moment) – just be nice please :)
-    </p>
-{{/content}}
+<h1 class="h2">Web Service Documentation</h1>
 
-<h2>POST http://joblint.org/ws</h2>
+<p>
+    The Joblint web service offers a simple way to lint your job specs without
+    installing on your local machine. There is a single endpoint, and there
+    aren't any rate limits (at the moment) – just be nice please :)
+</p>
 
-<h3>Request</h3>
+<h2 class="h3">Request</h2>
 
 <pre>POST http://joblint.org/ws HTTP/1.1
 User-Agent: MyApp/1.0 (a unique identifier for your application)
@@ -21,7 +18,7 @@ Content-Type: application/json
 
 {spec:"Your job spec goes here"}</pre>
 
-<h3>Response</h3>
+<h2 class="h3">Response</h2>
 
 <pre>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8

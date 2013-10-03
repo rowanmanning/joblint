@@ -45,6 +45,10 @@ function setViewLocals (app) {
         lang: 'en',
         year: (new Date()).getFullYear()
     });
+    app.use(function (req, res, next) {
+        res.locals.isHomePage = (req.path === '/');
+        next();
+    });
 }
 
 function loadControllers (app) {

@@ -2,7 +2,11 @@
 <header>
     <div class="header">
         <div class="container">
-            {{{block "header"}}}
+
+            {{#if isHomePage}}<h1>{{else}}<div class="h1">{{/if}}
+                Joblint
+            {{#if isHomePage}}</h1>{{else}}</div>{{/if}}
+
         </div>
     </div>
 </header>
