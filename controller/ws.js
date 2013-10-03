@@ -10,7 +10,7 @@ function defineController (app) {
         res.header('Access-Control-Allow-Origin', '*');
         next();
     });
-    app.post('/ws', requireJsonPostBody, requireUnemptyJobSpec, function (req, res) {
+    app.post('/ws', requireUA, requireJsonPostBody, requireUnemptyJobSpec, function (req, res) {
         res.jsonp(joblint(req.body.spec));
     });
     app.all('/ws', function (req, res) {
@@ -19,13 +19,22 @@ function defineController (app) {
         });
     });
     app.use('/ws', function (err, req, res, next) {
-        if (err && err.message === 'invalid json') {
+        if (err && err.status === 400) {
             return res.jsonp(400, {
                 error: 'Request body must be a valid JSON object'
             });
         }
         next(err);
     });
+}
+
+function requireUA (req, res, next) {
+    if (!req.headers['user-agent']) {
+        return res.jsonp(400, {
+            error: 'Request must have a User-Agent header which identifies your application'
+        });
+    }
+    next();
 }
 
 function requireJsonPostBody (req, res, next) {
