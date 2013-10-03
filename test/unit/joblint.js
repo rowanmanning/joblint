@@ -24,6 +24,7 @@ describe('joblint', function () {
             bubble: sinon.spy(),
             expectations: sinon.spy(),
             language: sinon.spy(),
+            realism: sinon.spy(),
             sexism: sinon.spy(),
             tech: sinon.spy()
         };
@@ -31,6 +32,7 @@ describe('joblint', function () {
         mockery.registerMock('./rule/bubble', rules.bubble);
         mockery.registerMock('./rule/expectations', rules.expectations);
         mockery.registerMock('./rule/language', rules.language);
+        mockery.registerMock('./rule/realism', rules.realism);
         mockery.registerMock('./rule/sexism', rules.sexism);
         mockery.registerMock('./rule/tech', rules.tech);
 
@@ -62,6 +64,7 @@ describe('joblint', function () {
             assert.strictEqual(rules.bubble.withArgs(linter).callCount, 1);
             assert.strictEqual(rules.expectations.withArgs(linter).callCount, 1);
             assert.strictEqual(rules.language.withArgs(linter).callCount, 1);
+            assert.strictEqual(rules.realism.withArgs(linter).callCount, 1);
             assert.strictEqual(rules.sexism.withArgs(linter).callCount, 1);
             assert.strictEqual(rules.tech.withArgs(linter).callCount, 1);
         });
