@@ -114,7 +114,7 @@ small {
 }
 .tab {
     display:inline-block;
-    padding:10px 25px 1px 25px;
+    padding:10px 25px 2px 25px;
     margin-bottom:0;
     text-transform: uppercase;
 }
@@ -394,6 +394,12 @@ small {
     }
 }
 @media (max-width:360px) {
+    body {
+        text-align:center;
+    }
+    pre, .bar-chart-container {
+        text-align:left;
+    }
     .lead {
         font-size:16px;
     }
@@ -403,5 +409,8 @@ small {
     .btn {
         padding:7px 13px;
         font-size:22px;
+    }
+    .result-detail {
+        font-size:14px;
     }
 }
