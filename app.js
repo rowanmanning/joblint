@@ -12,7 +12,7 @@ function initApp () {
     var app = express();
     configureExpress(app);
     configureViews(app);
-    loadViewHelpers(app);
+    loadViewHelpers();
     setViewLocals(app);
     loadControllers(app);
     startApp(app);
@@ -40,7 +40,7 @@ function configureViews (app) {
     app.set('view engine', 'html');
 }
 
-function loadViewHelpers (app) {
+function loadViewHelpers () {
     require('./view/helper/points')(hbs.registerHelper);
 }
 
