@@ -1,7 +1,7 @@
 {
     "name": "joblint.org",
     "mod-project-name": "joblint.org",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "private": true,
 
     "description": "Test tech job specs for issues with sexism, culture, expectations, and recruiter fails.",
