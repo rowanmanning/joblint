@@ -6,13 +6,13 @@
 
 <dl class="bar-chart">
     <dt>Culture Fails ({{result.failPoints.culture}})</dt>
-    <dd class="bar" style="width:100%">{{result.failPoints.culture}}</dd>
+    <dd class="bar" style="width:{{pointsToPercentage result.failPoints.culture}}">{{result.failPoints.culture}}</dd>
     <dt>Realism Fails ({{result.failPoints.realism}})</dt>
-    <dd class="bar" style="width:83%">{{result.failPoints.realism}}</dd>
+    <dd class="bar" style="width:{{pointsToPercentage result.failPoints.realism}}">{{result.failPoints.realism}}</dd>
     <dt>Recruiter Fails ({{result.failPoints.recruiter}})</dt>
-    <dd class="bar" style="width:66%">{{result.failPoints.recruiter}}</dd>
+    <dd class="bar" style="width:{{pointsToPercentage result.failPoints.recruiter}}">{{result.failPoints.recruiter}}</dd>
     <dt>Tech Fails ({{result.failPoints.tech}})</dt>
-    <dd class="bar" style="width:50%">{{result.failPoints.tech}}</dd>
+    <dd class="bar" style="width:{{pointsToPercentage result.failPoints.tech}}">{{result.failPoints.tech}}</dd>
 </dl>
 
 <ul class="results">

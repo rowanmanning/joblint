@@ -12,6 +12,7 @@ function initApp () {
     var app = express();
     configureExpress(app);
     configureViews(app);
+    loadViewHelpers(app);
     setViewLocals(app);
     loadControllers(app);
     startApp(app);
@@ -37,6 +38,10 @@ function configureViews (app) {
         layoutsDir: __dirname + '/view/layout'
     }));
     app.set('view engine', 'html');
+}
+
+function loadViewHelpers (app) {
+    require('./view/helper/points')(hbs.registerHelper);
 }
 
 function setViewLocals (app) {
