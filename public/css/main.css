@@ -98,6 +98,11 @@ textarea:focus, textarea:hover, textarea:active  {
     border:solid 3px #C8B0E8;
     outline: 0 none;
 }
+input, textarea {
+    -webkit-appearance:none;
+    -webkit-border-radius:0;
+    border-radius:0;
+}
 small {
     font-size:16px;
 }

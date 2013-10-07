@@ -17,13 +17,13 @@
     <div class="box spaced bar-chart-container triangle triangle-after triangle-reversed">
         <p class="h3 upper">Graph of Fails</p>
         <dl class="bar-chart">
-            <dt>Culture Fails ({{result.failPoints.culture}})</dt>
+            <dt>Culture - {{result.failPoints.culture}}</dt>
             <dd class="bar" style="width:{{pointsToPercentage result.failPoints.culture}}">{{result.failPoints.culture}}</dd>
-            <dt>Realism Fails ({{result.failPoints.realism}})</dt>
+            <dt>Realism - {{result.failPoints.realism}}</dt>
             <dd class="bar" style="width:{{pointsToPercentage result.failPoints.realism}}">{{result.failPoints.realism}}</dd>
-            <dt>Recruiter Fails ({{result.failPoints.recruiter}})</dt>
+            <dt>Recruiter - {{result.failPoints.recruiter}}</dt>
             <dd class="bar" style="width:{{pointsToPercentage result.failPoints.recruiter}}">{{result.failPoints.recruiter}}</dd>
-            <dt>Tech Fails ({{result.failPoints.tech}})</dt>
+            <dt>Tech - {{result.failPoints.tech}}</dt>
             <dd class="bar" style="width:{{pointsToPercentage result.failPoints.tech}}">{{result.failPoints.tech}}</dd>
         </dl>
     </div>
@@ -71,4 +71,4 @@
 {{/result}}
 
 
-<a class="btn" href="/">Try linting another job</a>
+<a class="btn" href="/">Lint another job</a>
