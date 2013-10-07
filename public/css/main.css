@@ -241,6 +241,9 @@ small {
 .bar:last-child {
     margin-bottom:0;
 }
+.success {
+    color:#93c151;
+}
 .error {
     color:#FAA086;
 }

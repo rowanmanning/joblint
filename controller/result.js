@@ -9,8 +9,11 @@ function defineController (app) {
         res.redirect('/');
     });
     app.post('/result', requireUnemptyJobSpec, function (req, res) {
+        var result = joblint(req.body.spec);
         res.render('result', {
-            result: joblint(req.body.spec)
+            hasFailPoints: result.hasFailPoints(),
+            isClean: result.isClean(),
+            result: result
         });
     });
 }
