@@ -1,16 +1,16 @@
 
 <header>
     <div class="header">
-        <div class="container">
+        <div class="container clearfix">
+
+            <ul class="nav floated-list clearfix">
+                <li><a href="/">Lint A Job</a></li>
+                <li class="last"><a href="/developer">Web Service</a></li>
+            </ul>
 
             {{#if isHomePage}}<h1>{{else}}<div class="h1">{{/if}}
                 <a href="/">Joblint</a>
             {{#if isHomePage}}</h1>{{else}}</div>{{/if}}
-
-            <ul>
-                <li><a href="/">Lint A Job</a></li>
-                <li><a href="/developer">Web Service</a></li>
-            </ul>
 
         </div>
     </div>
