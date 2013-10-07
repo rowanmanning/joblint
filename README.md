@@ -37,6 +37,12 @@ $ make lint
 Please ensure there are no lint errors before opening a pull request.
 
 
+Notable Contributions
+---------------------
+
+[Perry Harlock](http://www.phwebs.co.uk/) for the original styling/front-end work.
+
+
 License
 -------
 

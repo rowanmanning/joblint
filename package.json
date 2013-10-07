@@ -7,6 +7,9 @@
     "description": "Test tech job specs for issues with sexism, culture, expectations, and recruiter fails.",
     "keywords": [ "job", "lint" ],
     "author": "Rowan Manning (http://rowanmanning.com/)",
+    "contributors": [
+        "Perry Harlock (http://www.phwebs.co.uk/)"
+    ],
     "license": "MIT",
 
     "repository": {
