@@ -3,7 +3,7 @@ Joblint.org
 
 The source code for http://joblint.org/
 
-**Current Version:** *1.0.1*  
+**Current Version:** *1.1.0*  
 **Node Support:** *0.10*
 
 
