@@ -2,7 +2,7 @@
 {{#content "title"}}Joblint Results{{/content}}
 {{#content "description"}}Results for your job spec.{{/content}}
 
-<h1 class="lead">Job Linter Results</h1>
+<h1 class="lead">Joblint Results</h1>
 
 
 {{#if isClean}}
@@ -14,17 +14,36 @@
 
 
 {{#if hasFailPoints}}
+    <h3 class="box tab">Overview</h3>
     <div class="box spaced bar-chart-container triangle triangle-after triangle-reversed">
-        <p class="h3 upper">Graph of Fails</p>
+        <p class="small">
+            This graph is a quick visualisation of how many issues your job spec has.
+        </p>
         <dl class="bar-chart">
-            <dt>Culture - {{result.failPoints.culture}}</dt>
-            <dd class="bar" style="width:{{pointsToPercentage result.failPoints.culture}}">{{result.failPoints.culture}}</dd>
-            <dt>Realism - {{result.failPoints.realism}}</dt>
-            <dd class="bar" style="width:{{pointsToPercentage result.failPoints.realism}}">{{result.failPoints.realism}}</dd>
-            <dt>Recruiter - {{result.failPoints.recruiter}}</dt>
-            <dd class="bar" style="width:{{pointsToPercentage result.failPoints.recruiter}}">{{result.failPoints.recruiter}}</dd>
-            <dt>Tech - {{result.failPoints.tech}}</dt>
-            <dd class="bar" style="width:{{pointsToPercentage result.failPoints.tech}}">{{result.failPoints.tech}}</dd>
+            <dt>Culture Issues ({{result.failPoints.culture}})</dt>
+            <dd class="bar">
+                {{#repeat result.failPoints.culture}}
+                    <span class="notch"></span>
+                {{/repeat}}
+            </dd>
+            <dt>Realism Issues ({{result.failPoints.realism}})</dt>
+            <dd class="bar">
+                {{#repeat result.failPoints.realism}}
+                    <span class="notch"></span>
+                {{/repeat}}
+            </dd>
+            <dt>Recruiter Issues ({{result.failPoints.recruiter}})</dt>
+            <dd class="bar">
+                {{#repeat result.failPoints.recruiter}}
+                    <span class="notch"></span>
+                {{/repeat}}
+            </dd>
+            <dt>Tech Issues ({{result.failPoints.tech}})</dt>
+            <dd class="bar">
+                {{#repeat result.failPoints.tech}}
+                    <span class="notch"></span>
+                {{/repeat}}
+            </dd>
         </dl>
     </div>
 {{/if}}

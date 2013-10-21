@@ -103,7 +103,7 @@ input, textarea {
     -webkit-border-radius:0;
     border-radius:0;
 }
-small {
+small, .small {
     font-size:16px;
 }
 .box {
@@ -234,17 +234,25 @@ small {
     margin-bottom:80px;
 }
 .bar-chart {
-    width:80%;
     color:#e1e1e1;
 }
 .bar {
-    background-color:#e1e1e1;
-    color:#e1e1e1;
-    height:40px;
+    height:30px;
+    margin-top: 5px;
     margin-bottom:20px;
+    border-left:5px solid #c8b0e8;
+    overflow:hidden;
+    text-indent:-300px;
 }
 .bar:last-child {
     margin-bottom:0;
+}
+.notch {
+    background-color:#97857E;
+    float:left;
+    margin-left:5px;
+    width: 3%;
+    height:30px;
 }
 .success {
     color:#93c151;

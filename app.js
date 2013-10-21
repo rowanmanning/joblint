@@ -41,7 +41,7 @@ function configureViews (app) {
 }
 
 function loadViewHelpers () {
-    require('./view/helper/points')(hbs.registerHelper);
+    require('./view/helper/repeat')(hbs.registerHelper);
 }
 
 function setViewLocals (app) {
