@@ -1,11 +1,10 @@
 {
     "name": "joblint",
-    "version": "1.3.2",
+    "version": "2.0.0-pre",
 
-    "description": "Test tech job specs for issues with sexism, culture, expectations, and recruiter fails.",
+    "description": "Test tech job specs for issues with sexism, culture, expectations, and recruiter fails",
     "keywords": [ "job", "lint" ],
     "author": "Rowan Manning (http://rowanmanning.com/)",
-    "license": "MIT",
 
     "repository": {
         "type": "git",
@@ -13,29 +12,26 @@
     },
     "homepage": "https://github.com/rowanmanning/joblint",
     "bugs": "https://github.com/rowanmanning/joblint/issues",
+    "license": "MIT",
 
     "engines": {
         "node": ">=0.10"
     },
-    "dependencies": {
-        "chalk": "0.2",
-        "commander": "~2.0",
-        "dedupe": "~0.2",
-        "flatten": "~0.0",
-        "pad-component": "~0.0",
-        "slugg": "~0.1",
-        "wordwrap": "~0.0"
-    },
+    "dependencies": {},
     "devDependencies": {
-        "jshint": "~2.1",
-        "mocha": "~1.13",
+        "jscs": "^1",
+        "jshint": "^2",
+        "mocha": "^2",
         "mockery": "~1.4",
-        "proclaim": "~2.0",
-        "sinon": "~1.7"
+        "proclaim": "^3",
+        "sinon": "^1"
     },
 
     "main": "./lib/joblint.js",
     "bin": {
         "joblint": "./bin/joblint.js"
+    },
+    "scripts": {
+        "test": "make ci"
     }
 }
