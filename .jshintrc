@@ -9,7 +9,7 @@
     },
     "globalstrict": true,
     "latedef": "nofunc",
-    "maxparams": 2,
+    "maxparams": 3,
     "maxdepth": 2,
     "maxstatements": 5,
     "maxcomplexity": 5,
