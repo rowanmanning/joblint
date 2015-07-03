@@ -2,7 +2,7 @@
     "name": "joblint",
     "version": "2.0.0-pre",
 
-    "description": "Test tech job specs for issues with sexism, culture, expectations, and recruiter fails",
+    "description": "Test tech job posts for issues with sexism, culture, expectations, and recruiter fails",
     "keywords": [ "job", "lint" ],
     "author": "Rowan Manning (http://rowanmanning.com/)",
 
