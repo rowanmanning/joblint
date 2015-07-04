@@ -7,6 +7,7 @@
   * Change the result format
   * Overhaul the reporters
   * Simplify some of the rule triggers
+  * Add browser and Bower support
 
 ## 1.3.2 (2014-03-11)
 
