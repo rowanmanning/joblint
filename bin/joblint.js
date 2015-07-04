@@ -71,6 +71,7 @@ function handleInputSuccess (data) {
 function loadReporter (name) {
     var reporter = requireFirst([
         '../reporter/' + name,
+        name,
         path.join(process.cwd(), name)
     ], null);
     if (!reporter) {
