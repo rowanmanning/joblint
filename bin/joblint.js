@@ -17,7 +17,7 @@ function initProgram () {
         .usage('[options] <path>')
         .option(
             '-r, --reporter <reporter>',
-            'the reporter to use: cli (default), csv, json',
+            'the reporter to use: cli (default), json',
             'cli'
         )
         .option(
