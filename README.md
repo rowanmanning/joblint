@@ -37,7 +37,7 @@ Command-Line Interface
 
 Install Joblint globally with [npm][npm]:
 
-```
+```sh
 npm install -g joblint
 ```
 
@@ -57,20 +57,20 @@ This installs the `joblint` command-line tool:
 
 Run Joblint against a text file:
 
-```
+```sh
 joblint path/to/job-post.txt
 ```
 
 Run Joblint against a text file and output JSON results to another file:
 
-```
+```sh
 joblint --reporter json path/to/job-post.txt > report.json
 ```
 
 Run Joblint against piped-in input:
 
 ```sh
-echo "This is a job spec" | joblint
+echo "This is a job post" | joblint
 ```
 
 Run Joblint against the clipboard contents:
@@ -139,19 +139,88 @@ Require Joblint:
 var joblint = require('joblint');
 ```
 
-TODO
+Run Joblint on a string:
+
+```js
+var results = joblint('This is a job post');
+```
+
+The `results` object that gets returned looks like this:
+
+```js
+{
+
+    // A count of different issue types
+    counts: {
+        foo: Number
+    },
+
+    // A list of issues with the job post
+    issues: [
+        
+        {
+            name: String, // Short name for the rule that was triggered
+            reason: String, // A longer description of why this rule was triggered
+            solution: String, // A short description of how to solve this issue
+            level: String, // error, warning, or notice
+            increment: {
+                foo: Number // The amount that each count has been incremented
+            },
+            occurance: String, // The exact occurance of the trigger
+            position: Number, // The position of the trigger in the input text
+            context: String // The text directly around the trigger with the trigger replaced by "{{occurance}}"
+        }
+
+    ]
+}
+```
+
+You can also configure Joblint on each run. See [Configuration](#configuration) for more information:
+
+```js
+var results = joblint('This is a job post', {
+    // options object
+});
+```
 
 
 Configuration
 -------------
 
-TODO
+### `rules` (array)
+
+An array of rules which will override the default set. See [Writing Rules](#writing-rules) for more information.
+
+```js
+joblint('This is a job post', {
+    rules: [
+        // ...
+    ]
+});
+```
 
 
 Writing Rules
 -------------
 
-TODO
+Writing rules (for your own use, or contributing back to the core library) is fairly easy. You just need to write rule objects with all the required properties:
+
+```js
+{
+    name: String, // Short name for the rule
+    reason: String, // A longer description of why this rule might be triggered
+    solution: String, // A short description of how to solve the issue
+    level: String, // error, warning, or notice
+    increment: {
+        foo: Number // Increment a counter by an amount. The default set is: culture, realism, recruiter, sexism, tech
+    },
+    triggers: [
+        String // An array of trigger words as strings. These words are converted to regular expressions
+    ]
+}
+```
+
+Look in [lib/rules.js](lib/rules.js) for existing rules.
 
 
 Contributing
