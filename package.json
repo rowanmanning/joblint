@@ -21,6 +21,7 @@
         "chalk": "1.1",
         "commander": "~2.8",
         "node.extend": "~1.1",
+        "pad-component": "0.0.1",
         "wordwrap": "~1.0"
     },
     "devDependencies": {
