@@ -11,8 +11,8 @@ describe('lib/joblint', function () {
 
     beforeEach(function () {
 
-        extend = sinon.spy(require('node.extend'));
-        mockery.registerMock('node.extend', extend);
+        extend = sinon.spy(require('extend'));
+        mockery.registerMock('extend', extend);
 
         joblint = require('../../../lib/joblint');
 
@@ -47,6 +47,9 @@ describe('lib/joblint', function () {
     describe('joblint()', function () {
 
         it('should default the options', function () {
+            if (typeof window !== 'undefined') {
+                return;
+            }
             joblint('', options);
             assert.calledOnce(extend);
             assert.isObject(extend.firstCall.args[0]);

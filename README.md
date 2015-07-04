@@ -128,6 +128,19 @@ A joblint reporter should export a single function which accepts two arguments:
 JavaScript Interface
 --------------------
 
+Joblint can run in either a web browser or Node.js. The supported versions are:
+
+  - Node.js 0.10, 0.12
+  - Android Browser 2.2+
+  - Edge 0.11+
+  - Firefox 26+
+  - Google Chrome 14+
+  - Internet Explorer 9+
+  - Safari 5+
+  - Safari iOS 4+
+
+### Node.js
+
 Install Joblint with [npm][npm] or add to your `package.json`:
 
 ```
@@ -139,6 +152,16 @@ Require Joblint:
 ```js
 var joblint = require('joblint');
 ```
+
+### Browser
+
+Include the built version of Joblint in your page (found in [built/joblint.js](build/joblint.js)):
+
+```html
+<script src="joblint.js"></script>
+```
+
+### Running
 
 Run Joblint on a string:
 
