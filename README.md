@@ -17,7 +17,7 @@ Test tech job posts for issues with sexism, culture, expectations, and recruiter
 joblint path/to/job-post.txt
 ```
 
-![Joblint output](screenshot.png)
+<img src="screenshot.png" alt="Joblint output" width="625"/>
 
 
 Table Of Contents
