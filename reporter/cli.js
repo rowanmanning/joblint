@@ -57,8 +57,7 @@ function getLongest (array) {
 function reportIssue (issue) {
     console.log('');
     console.log(
-        chalk[getColorForLevel(issue.level)]('•'),
-        chalk[getColorForLevel(issue.level)].bold(issue.name),
+        chalk[getColorForLevel(issue.level)].bold('• ' + issue.name),
         chalk.grey('(' + issue.level + ')')
     );
     console.log(
