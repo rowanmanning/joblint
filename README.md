@@ -161,6 +161,14 @@ Include the built version of Joblint in your page (found in [built/joblint.js](b
 <script src="joblint.js"></script>
 ```
 
+### Browser (Bower)
+
+Install Joblint with [Bower][bower] or add to your `bower.json`:
+
+```
+bower install joblint
+```
+
 ### Running
 
 Run Joblint on a string:
@@ -287,6 +295,7 @@ Copyright &copy; 2015, Rowan Manning
 
 
 
+[bower]: http://bower.io/
 [commander]: https://github.com/tj/commander.js
 [contrib]: https://github.com/rowanmanning/joblint/graphs/contributors
 [npm]: https://www.npmjs.com/

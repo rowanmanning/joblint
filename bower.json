@@ -1,0 +1,24 @@
+{
+    "name": "joblint",
+    "version": "2.0.0-pre",
+
+    "description": "Test tech job posts for issues with sexism, culture, expectations, and recruiter fails",
+    "keywords": [ "job", "lint" ],
+    "author": "Rowan Manning (http://rowanmanning.com/)",
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rowanmanning/joblint.git"
+    },
+    "homepage": "https://github.com/rowanmanning/joblint",
+    "bugs": "https://github.com/rowanmanning/joblint/issues",
+    "license": "MIT",
+
+    "moduleType": [
+        "amd",
+        "globals",
+        "node"
+    ],
+
+    "main": "./build/joblint.js"
+}
