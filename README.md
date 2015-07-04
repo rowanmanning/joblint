@@ -27,6 +27,7 @@ Table Of Contents
 - [JavaScript Interface](#javascript-interface)
 - [Configuration](#configuration)
 - [Writing Rules](#writing-rules)
+- [Examples](#examples)
 - [Contributing](#contributing)
 - [Thanks](#thanks)
 - [License](#license)
@@ -221,6 +222,18 @@ Writing rules (for your own use, or contributing back to the core library) is fa
 ```
 
 Look in [lib/rules.js](lib/rules.js) for existing rules.
+
+
+Examples
+--------
+
+There are some example job posts that you can test with in the [example directory](example):
+
+```sh
+joblint example/passing.txt
+joblint example/realistic.txt
+joblint example/oh-dear.txt
+```
 
 
 Contributing
