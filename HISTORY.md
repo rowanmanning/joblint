@@ -1,7 +1,7 @@
 
 # History
 
-## 2.0.0 (unreleased)
+## 2.0.0 (2015-07-04)
 
   * Rewrite and simplify the library
   * Change the result format
