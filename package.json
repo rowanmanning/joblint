@@ -18,7 +18,10 @@
         "node": ">=0.10"
     },
     "dependencies": {
-        "node.extend": "~1.1"
+        "chalk": "1.1",
+        "commander": "~2.8",
+        "node.extend": "~1.1",
+        "wordwrap": "~1.0"
     },
     "devDependencies": {
         "jscs": "^1",

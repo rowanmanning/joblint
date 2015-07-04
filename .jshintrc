@@ -11,7 +11,7 @@
     "latedef": "nofunc",
     "maxparams": 3,
     "maxdepth": 2,
-    "maxstatements": 5,
+    "maxstatements": 8,
     "maxcomplexity": 5,
     "node": true,
     "unused": true
