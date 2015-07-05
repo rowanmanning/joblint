@@ -55,20 +55,28 @@
     </div>
 
     <div id="unsupported" style="display: none;">
-        Sorry, your browser is not supported by Joblint.
-        Please consider using the
-        <a href="https://github.com/rowanmanning/joblint">command-line tool</a>
-        or for a faster and safer browsing experience,
-        <a href="http://browsehappy.com/" target="_blank">Upgrade your browser</a>.
+        <div class="overlay">
+            <div class="overlay-inner">
+                Sorry, your browser is not supported by Joblint.
+                Please consider using the
+                <a href="https://github.com/rowanmanning/joblint">command-line tool</a>
+                or for a faster and safer browsing experience,
+                <a href="http://browsehappy.com/" target="_blank">Upgrade your browser</a>.
+            </div>
+        </div>
+        <div class="modal"></div>
     </div>
 
     <noscript>
-        <div>
-            Sorry, Joblint requires JavaScript to run.
-            Please consider using the
-            <a href="https://github.com/rowanmanning/joblint">command-line tool</a>
-            if you don't wish to enable JavaScript.
+        <div class="overlay">
+            <div class="overlay-inner">
+                Sorry, Joblint requires JavaScript to run.
+                Please consider using the
+                <a href="https://github.com/rowanmanning/joblint">command-line tool</a>
+                if you don't wish to enable JavaScript.
+            </div>
         </div>
+        <div class="modal"></div>
     </noscript>
 
     <!--[if gt IE 8]><!-->
