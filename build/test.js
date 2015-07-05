@@ -41,6 +41,7 @@ function buildRules (rules) {
 }
 
 function buildRule (rule) {
+    rule = extend(true, {}, rule);
     rule.increment = rule.increment || {};
     rule.triggers = rule.triggers.map(function (trigger) {
         return new RegExp('\\b(' + trigger + ')\\b', 'gim');
@@ -8222,6 +8223,17 @@ describe('lib/joblint', function () {
             assert.lengthEquals(result.issues, 0);
         });
 
+        it('should be the same for each run', function () {
+            options.rules.push({
+                triggers: [
+                    'he'
+                ]
+            });
+            var result1 = joblint('he should have his head screwed on', options);
+            var result2 = joblint('he should have his head screwed on', options);
+            assert.deepEqual(result1, result2);
+        });
+
     });
 
     describe('rule matching', function () {
@@ -8308,7 +8320,7 @@ describe('lib/joblint', function () {
                 assert.strictEqual(result.issues[0].reason, rule.reason);
                 assert.strictEqual(result.issues[0].solution, rule.solution);
                 assert.strictEqual(result.issues[0].level, rule.level);
-                assert.strictEqual(result.issues[0].increment, rule.increment);
+                assert.deepEqual(result.issues[0].increment, rule.increment);
                 assert.isUndefined(result.issues[0].triggers);
             });
 
