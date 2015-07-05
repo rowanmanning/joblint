@@ -1,6 +1,10 @@
 
 # History
 
+## 2.1.1 (2015-07-05)
+
+  * Fix some typos in the examples
+
 ## 2.1.0 (2015-07-05)
 
   * Fix a bug where Joblint compiled Regular expressions multiple times
