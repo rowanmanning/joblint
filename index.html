@@ -45,7 +45,7 @@ layout: page
     <div class="output-issues">
         <h2>Issues</h2>
         <div data-control="issuesOutput">
-            <p>No issues found!</p>
+            <p class="no-issues">No issues found!</p>
             <script type="text/x-template" data-template="issues">
 
                 {#issues.length}
@@ -57,7 +57,7 @@ layout: page
                 {/issues.length}
 
                 {^issues.length}
-                    <p>No issues found!</p>
+                    <p class="no-issues">No issues found!</p>
                 {/issues.length}
 
             </script>
