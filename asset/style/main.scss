@@ -11,6 +11,7 @@ html {
 }
 body {
     @include rem(font-size, 14px);
+    line-height: 1.3;
     color: #ddd;
 }
 h1, h2, h3, p, ul {
@@ -22,10 +23,12 @@ h1 {
     @include rem(font-size, 24px);
 }
 h2 {
-    @include rem(font-size, 18px);
+    @include rem(font-size, 14px);
+    text-transform: uppercase;
 }
 h3 {
     @include rem(font-size, 14px);
+    text-transform: uppercase;
 }
 a {
     color: inherit;
@@ -92,6 +95,8 @@ body {
     border: 1px solid #999;
     border: none;
     @include rem(font-size, 16px);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .6);
 }
 .post-input:focus {
     outline: none;
@@ -103,16 +108,18 @@ body {
 .output-area {
     width: 40%;
     overflow: auto;
-    padding: 15px;
+    padding: 20px;
 }
+.output-area h2 {
 
+}
 .issue-list {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 .issue-list li {
-    @include rem(margin-bottom, 14px);
+    margin-bottom: 20px;
 }
 .issue {
     padding: 10px;
@@ -125,7 +132,32 @@ body {
     background-color: #48463a;
 }
 .issue h3, .issue p {
+    @include rem(margin-bottom, 10px);
+}
+.issue p:last-child {
     margin-bottom: 0;
+}
+.level {
+    text-transform: none;
+    color: rgba(255, 255, 255, .6);
+}
+.context {
+    padding: 10px;
+    background-color: #1d1e20;
+    color: rgba(255, 255, 255, .6);
+    @include rem(font-size, 16px);
+    line-height: 1.5;
+}
+.occurance {
+    display: inline-block;
+    padding: 2px 5px;
+    background-color: #693434;
+    font-style: normal;
+    color: #fff;
+}
+.reason {
+    color: rgba(255, 255, 255, .6);
+    font-style: italic;
 }
 
 
