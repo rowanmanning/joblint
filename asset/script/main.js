@@ -18,7 +18,9 @@
     function initTemplates () {
         $('[data-template]').each(function () {
             var name = this.getAttribute('data-template');
-            var template = Hogan.compile(this.innerHTML, {delimiters: '{ }'});
+            var template = Hogan.compile(this.innerHTML, {
+                delimiters: '{ }'
+            });
             templates[name] = template;
         });
     }
@@ -46,6 +48,10 @@
 
     function issuesOutputControl (element) {
         $(document).on('lint-results', function (event, results) {
+            results.issues.forEach(function (issue) {
+                var occuranceHtml = templates.occurance.render(issue);
+                issue.contextHtml = issue.context.replace('{{occurance}}', occuranceHtml);
+            });
             element.innerHTML = templates.issues.render(results, templates);
         });
     };

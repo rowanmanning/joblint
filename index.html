@@ -4,12 +4,12 @@ description: Test tech job posts for issues with sexism, culture, expectations, 
 layout: page
 ---
 
-<div>
-    <p>Paste or write your job post below:</p>
-    <textarea data-control="postInput"></textarea>
+<div class="column input-area">
+    <label class="visually-hidden" for="post-input">Paste or write your job post here</label>
+    <textarea id="post-input" class="post-input" data-control="postInput" placeholder="Paste or write your job post here"></textarea>
 </div>
 
-<div>
+<div class="column output-area">
 
     <div>
         <h2>Issue Tally</h2>
@@ -44,7 +44,7 @@ layout: page
             <script type="text/x-template" data-template="issues">
 
                 {#issues.length}
-                    <ul>
+                    <ul class="issue-list">
                         {#issues}
                             <li>{>issue}</li>
                         {/issues}
@@ -58,8 +58,19 @@ layout: page
             </script>
             <script type="text/x-template" data-template="issue">
 
-                Issue: {name}
+                <div class="issue issue-{level}">
+                    <h3>
+                        {name}
+                        <span class="level">({level})</span>
+                    </h3>
+                    <p class="context">{&contextHtml}</p>
+                    <p class="solution">{solution}</p>
+                    <p class="reason">{reason}</p>
+                </div>
 
+            </script>
+            <script type="text/x-template" data-template="occurance">
+                <em class="occurance">{occurance}</em>
             </script>
         </div>
     </div>

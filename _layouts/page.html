@@ -7,27 +7,40 @@
     <title>{{page.title}}</title>
     <meta name="description" content="{{page.description}}"/>
 
+    <!-- Styles -->
+    <meta name="viewport" content="width=device-width"/>
+    <!--[if gt IE 7]><!-->
+        <link rel="stylesheet" href="/asset/style/main.css"/>
+    <!--<![endif]-->
+    <link rel="icon" href="/favicon.png" type="image/png"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+
 </head>
 <body>
 
-    <div class="page">
-
-        <div role="banner" class="header">
-            <header>
-                {% include site/header.html %}
-            </header>
+    <!--[if lte IE 7]>
+        <div style="background-color:#ff0;">
+            You are using an outdated version of Internet Explorer. Parts of this site, and others,
+            may appear broken.<br/>
+            For a faster and safer browsing experience,
+            <a href="http://browsehappy.com/" target="_blank">Upgrade your browser</a>.
         </div>
+    <![endif]-->
 
-        <div role="main" class="main">
-            {{content}}
-        </div>
+    <div role="banner" class="header">
+        <header>
+            {% include site/header.html %}
+        </header>
+    </div>
 
-        <div role="contentinfo" class="footer">
-            <footer>
-                {% include site/footer.html %}
-            </footer>
-        </div>
+    <div role="main" class="main">
+        {{content}}
+    </div>
 
+    <div role="contentinfo" class="footer">
+        <footer>
+            {% include site/footer.html %}
+        </footer>
     </div>
 
     <div id="unsupported" style="display: none;">
