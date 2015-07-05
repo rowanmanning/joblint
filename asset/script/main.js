@@ -45,10 +45,13 @@
                 $document.trigger('lint-results', results);
             }
         });
-        element.value = loadSession();
-        setTimeout(function () {
-            $element.trigger('keyup');
-        }, 1);
+        var session = loadSession();
+        if (session) {
+            element.value = loadSession();
+            setTimeout(function () {
+                $element.trigger('keyup');
+            }, 1);
+        }
     };
 
     function issuesOutputControl (element) {
