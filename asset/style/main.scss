@@ -55,6 +55,12 @@ body {
     background-color: #2a2c30;
 }
 
+@media only screen and (max-width: 720px) {
+    .main {
+        height: auto;
+    }
+}
+
 
 // Header
 
@@ -77,6 +83,13 @@ body {
     float: left;
     box-sizing: border-box;
     height: 100%;
+}
+
+@media only screen and (max-width: 720px) {
+    .column {
+        float: none;
+        height: auto;
+    }
 }
 
 
@@ -102,6 +115,16 @@ body {
     outline: none;
 }
 
+@media only screen and (max-width: 720px) {
+    .input-area {
+        width: auto;
+    }
+    .post-input {
+        width: 100%;
+        height: 300px;
+    }
+}
+
 
 // Output area
 
@@ -109,6 +132,27 @@ body {
     width: 40%;
     overflow: auto;
     padding: 20px;
+}
+.output-tally, .output-issues {
+    box-sizing: border-box;
+    @extend .clearfix;
+}
+
+@media only screen and (max-width: 720px) {
+    .output-area {
+        width: auto;
+    }
+    .output-tally, .output-issues {
+        float: left;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .output-tally, .output-issues {
+        float: none;
+        width: auto;
+    }
 }
 
 
@@ -196,6 +240,24 @@ body {
 }
 .number:after {
     content: ")"
+}
+
+@media only screen and (max-width: 1100px) {
+    .bar-label {
+        width: 20%;
+    }
+    .bar {
+        max-width: 65%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .bar-label {
+        width: 25%;
+    }
+    .bar {
+        max-width: 60%;
+    }
 }
 
 
