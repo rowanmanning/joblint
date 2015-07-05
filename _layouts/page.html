@@ -30,5 +30,30 @@
 
     </div>
 
+    <div id="unsupported" style="display: none;">
+        Sorry, your browser is not supported by Joblint.
+        Please consider using the
+        <a href="https://github.com/rowanmanning/joblint">command-line tool</a>
+        or for a faster and safer browsing experience,
+        <a href="http://browsehappy.com/" target="_blank">Upgrade your browser</a>.
+    </div>
+
+    <noscript>
+        <div>
+            Sorry, Joblint requires JavaScript to run.
+            Please consider using the
+            <a href="https://github.com/rowanmanning/joblint">command-line tool</a>
+            if you don't wish to enable JavaScript.
+        </div>
+    </noscript>
+
+    <!--[if gt IE 8]><!-->
+        <script src="/asset/script/vendor/jquery.js"></script>
+        <script src="/asset/script/vendor/cuff.js"></script>
+        <script src="/asset/script/vendor/hogan.js"></script>
+        <script src="/asset/script/vendor/joblint.js"></script>
+    <!--<![endif]-->
+    <script src="/asset/script/main.js"></script>
+
 </body>
 </html>

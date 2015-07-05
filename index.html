@@ -4,4 +4,64 @@ description: Test tech job posts for issues with sexism, culture, expectations, 
 layout: page
 ---
 
-<p>Hello World!</p>
+<div>
+    <p>Paste or write your job post below:</p>
+    <textarea data-control="postInput"></textarea>
+</div>
+
+<div>
+
+    <div>
+        <h2>Issue Tally</h2>
+        <ul data-control="countOutput">
+            <li>
+                <span>Culture</span>
+                <span data-role="count" data-type="culture">0</span>
+            </li>
+            <li>
+                <span>Realism</span>
+                <span data-role="count" data-type="realism">0</span>
+            </li>
+            <li>
+                <span>Recruiter</span>
+                <span data-role="count" data-type="recruiter">0</span>
+            </li>
+            <li>
+                <span>Sexism</span>
+                <span data-role="count" data-type="sexism">0</span>
+            </li>
+            <li>
+                <span>Tech</span>
+                <span data-role="count" data-type="tech">0</span>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Issues</h2>
+        <div data-control="issuesOutput">
+            <p>No issues found!</p>
+            <script type="text/x-template" data-template="issues">
+
+                {#issues.length}
+                    <ul>
+                        {#issues}
+                            <li>{>issue}</li>
+                        {/issues}
+                    </ul>
+                {/issues.length}
+
+                {^issues.length}
+                    <p>No issues found!</p>
+                {/issues.length}
+
+            </script>
+            <script type="text/x-template" data-template="issue">
+
+                Issue: {name}
+
+            </script>
+        </div>
+    </div>
+
+</div>

@@ -4,6 +4,7 @@ exclude:
   - CNAME
   - Gemfile
   - Gemfile.lock
+  - LICENSE
   - Makefile
   - README.md
 
@@ -18,11 +19,6 @@ markdown: kramdown
 
 # Disable custom plugins, and ignore symbolic links
 safe: true
-
-# Sass compilation
-sass:
-  sass_dir: asset/style
-  style: :compressed
 
 # Timezone setting
 timezone: Europe/London
