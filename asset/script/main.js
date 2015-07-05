@@ -8,7 +8,7 @@
         return;
     }
 
-    document.body.onload = initPage;
+    $(initPage);
 
     function initPage () {
         initTemplates();
@@ -41,9 +41,14 @@
             var lintId = generateLintId(results);
             if (!lastLintId || lintId !== lastLintId) {
                 lastLintId = lintId;
+                saveSession(element.value);
                 $document.trigger('lint-results', results);
             }
         });
+        element.value = loadSession();
+        setTimeout(function () {
+            $element.trigger('keyup');
+        }, 1);
     };
 
     function issuesOutputControl (element) {
@@ -78,6 +83,18 @@
 
     function generateLintId (results) {
         return JSON.stringify(results);
+    }
+
+    function saveSession (postContent) {
+        if (typeof window.localStorage !== 'undefined') {
+            localStorage.setItem('post', postContent);
+        }
+    }
+
+    function loadSession () {
+        if (typeof window.localStorage !== 'undefined') {
+            return localStorage.getItem('post');
+        }
     }
 
     function isSupportedBrowser () {
