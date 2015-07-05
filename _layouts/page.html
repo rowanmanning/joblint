@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Page meta-information -->
+    <meta charset="utf-8"/>
+    <title>{{page.title}}</title>
+    <meta name="description" content="{{page.description}}"/>
+
+</head>
+<body>
+
+    <div class="page">
+
+        <div role="banner" class="header">
+            <header>
+                {% include site/header.html %}
+            </header>
+        </div>
+
+        <div role="main" class="main">
+            {{content}}
+        </div>
+
+        <div role="contentinfo" class="footer">
+            <footer>
+                {% include site/footer.html %}
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+</html>

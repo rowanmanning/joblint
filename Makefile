@@ -1,26 +1,19 @@
 
-# Group targets
-all: deps lint start-dev
+# Color helpers
+C_CYAN=\x1b[34;01m
+C_RESET=\x1b[0m
 
-# Install dependencies
-deps:
-	@echo "Installing dependencies..."
-	@npm install
+# Build the site
+build:
+	@echo "$(C_CYAN)> building site$(C_RESET)"
+	@bundle exec jekyll build --drafts
 
-# Lint JavaScript
-lint:
-	@echo "Linting JavaScript..."
-	@./node_modules/.bin/jshint \
-		--config ./test/config/jshint.json \
-		--exclude ./node_modules \
-		*.js **/*.js
+# Watch the site for changes, then build
+watch:
+	@echo "$(C_CYAN)> watching and building site$(C_RESET)"
+	@bundle exec jekyll build --watch --drafts
 
-# Start the application
-start:
-	@echo "Starting application..."
-	@NODE_ENV=production node .
-
-# Start the application in development mode
-start-dev:
-	@echo "Starting application (development mode)..."
-	@NODE_ENV=development ./node_modules/.bin/supervisor -q .
+# Serve the site
+serve:
+	@echo "$(C_CYAN)> serving site$(C_RESET)"
+	@bundle exec jekyll serve --watch --drafts
