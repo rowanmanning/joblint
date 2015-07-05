@@ -1,6 +1,11 @@
 
 # History
 
+## 2.1.0 (2015-07-05)
+
+  * Fix a bug where Joblint compiled Regular expressions multiple times
+  * Add a minified version to the build folder
+
 ## 2.0.0 (2015-07-04)
 
   * Rewrite and simplify the library
