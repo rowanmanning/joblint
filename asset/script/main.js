@@ -62,20 +62,26 @@
     };
 
     function countOutputControl (element) {
-        var countElements = {};
-        var countElementsArray = [];
+        var counters = {};
+        var countersArray = [];
         $(element).find('[data-role=count]').each(function () {
             var type = this.getAttribute('data-type');
-            countElements[type] = this;
-            countElementsArray.push(this);
+            var count = {
+                bar: this.querySelector('[data-role=bar]'),
+                number: this.querySelector('[data-role=number]')
+            }
+            counters[type] = count;
+            countersArray.push(count);
         });
         $(document).on('lint-results', function (event, results) {
-            countElementsArray.forEach(function (countElement) {
-                countElement.innerHTML = 0;
+            countersArray.forEach(function (count) {
+                count.number.innerHTML = 0;
+                count.bar.style.width = 0;
             });
             Object.keys(results.counts).forEach(function (type) {
-                if (countElements[type]) {
-                    countElements[type].innerHTML = results.counts[type];
+                if (counters[type]) {
+                    counters[type].number.innerHTML = results.counts[type];
+                    counters[type].bar.style.width = (results.counts[type] * 2) + '%';
                 }
             });
         });

@@ -51,7 +51,7 @@ body {
     padding: 15px;
 }
 .main {
-    height: 80%;
+    height: 90%;
     background-color: #2a2c30;
 }
 
@@ -89,7 +89,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    padding: 15px;
+    padding: 20px;
     resize: none;
     background-color: #1d1e20;
     border: 1px solid #999;
@@ -110,9 +110,10 @@ body {
     overflow: auto;
     padding: 20px;
 }
-.output-area h2 {
 
-}
+
+// Issue list
+
 .issue-list {
     margin: 0;
     padding: 0;
@@ -158,6 +159,43 @@ body {
 .reason {
     color: rgba(255, 255, 255, .6);
     font-style: italic;
+}
+
+
+// Count chart
+
+.count-chart {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    list-style: none;
+}
+.count {
+    margin-bottom: 5px;
+    overflow: hidden;
+    @extend .clearfix;
+}
+.count span {
+    display: block;
+    float: left;
+}
+.bar-label {
+    width: 15%;
+    overflow: hidden;
+}
+.bar {
+    background-color: #a89b4a;
+    max-width: 70%;
+    margin-right: 10px;
+}
+.number {
+    color: rgba(255, 255, 255, .6);
+}
+.number:before {
+    content: "("
+}
+.number:after {
+    content: ")"
 }
 
 
