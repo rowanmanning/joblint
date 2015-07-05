@@ -2,6 +2,8 @@
 # Color helpers
 C_CYAN=\x1b[34;01m
 C_RESET=\x1b[0m
+VERSION=`node -e "process.stdout.write(require('./package.json').version)"`
+HOMEPAGE=`node -e "process.stdout.write(require('./package.json').homepage)"`
 
 # Group targets
 all: deps lint jscs test bundle
@@ -30,7 +32,10 @@ test:
 # Bundle client-side JavaScript
 bundle:
 	@echo "$(C_CYAN)> bundling client-side JavaScript$(C_RESET)"
-	@./node_modules/.bin/browserify ./lib/joblint --standalone joblint --outfile build/joblint.js
-	@./node_modules/.bin/browserify ./test/unit/setup ./test/unit/lib/joblint --outfile build/test.js
+	@echo "/*! Joblint $(VERSION) | $(HOMEPAGE) */" > build/joblint.js
+	@echo "/*! Joblint $(VERSION) | $(HOMEPAGE) */" > build/joblint.min.js
+	@./node_modules/.bin/browserify ./lib/joblint --standalone joblint >> build/joblint.js
+	@./node_modules/.bin/browserify ./lib/joblint --standalone joblint | ./node_modules/.bin/uglifyjs >> build/joblint.min.js
+	@./node_modules/.bin/browserify ./test/unit/setup ./test/unit/lib/joblint > build/test.js
 
 .PHONY: test

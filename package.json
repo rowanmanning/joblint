@@ -31,7 +31,8 @@
         "mocha": "^2",
         "mockery": "~1.4",
         "proclaim": "^3",
-        "sinon": "^1"
+        "sinon": "^1",
+        "uglify-js": "^2"
     },
 
     "main": "./lib/joblint.js",
