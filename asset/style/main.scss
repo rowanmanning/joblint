@@ -235,6 +235,7 @@ body {
     border-left: 2px solid #aaabac;
     max-width: 70%;
     margin-right: 10px;
+    transition: width .2s ease;
 }
 .number {
     color: rgba(255, 255, 255, .6);
