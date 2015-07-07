@@ -1,6 +1,14 @@
 
 # History
 
+## 2.2.0 (2015-07-07)
+
+  * Add rule for "Need to reassure"
+  * Add "make it rain" to bro terminology
+  * Add a rule for "Use of derogatory gendered term"
+  * Add "gay for" to sexualized terms list
+  * Fix the "top" trigger
+
 ## 2.1.1 (2015-07-05)
 
   * Fix some typos in the examples
