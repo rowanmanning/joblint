@@ -10,7 +10,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    @include rem(font-size, 14px);
+    font-size: 140%;
     line-height: 1.3;
     color: #ddd;
 }
