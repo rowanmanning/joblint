@@ -184,6 +184,29 @@ module.exports = [
         ]
     },
 
+    // Use of derogatory gendered term
+    {
+        name: 'Use of derogatory gendered term',
+        reason: 'When you use derogatory gendered terms, you\'re being discriminatory. These are offensive in a job post.',
+        solution: 'Remove these words.',
+        level: 'error',
+        increment: {
+            sexism: 2,
+            culture: 1
+        },
+        triggers: [
+            'bia?tch(es)?',
+            'bimbos?',
+            'hoes?',
+            'hunks?',
+            'milfs?',
+            'slags?',
+            'sluts?',
+            'stallions?',
+            'studs?'
+        ]
+    },
+
 
     // Mention of facial hair
     {
@@ -204,13 +227,14 @@ module.exports = [
     // Use of sexualised terms
     {
         name: 'Use of sexualised terms',
-        reason: 'Terms like "sexy code" are often used if the person writing a post doesn\'t know what they are talking about or can\'t articulate what good code is. It can also be an indicator of bro culture.',
+        reason: 'Terms like "sexy code" are often used if the person writing a post doesn\'t know what they are talking about or can\'t articulate what good code is. It can also be an indicator of bro culture or sexism.',
         solution: 'Remove these words.',
         level: 'warning',
         increment: {
             culture: 1
         },
         triggers: [
+            'gay for',
             'sexy',
             'hawt',
             'phat'
@@ -235,6 +259,7 @@ module.exports = [
             'dude(bro)?s?',
             'hard[ -]*core',
             'hella',
+            'mak(e|ing) it rain',
             'skillz'
         ]
     },
@@ -314,7 +339,8 @@ module.exports = [
             'fore[ -]*front',
             'super[ -]*stars?',
             'the best',
-            'top',
+            'reach the top',
+            'top of .{2,8} (game|class)',
             'win'
         ]
     },
@@ -394,6 +420,22 @@ module.exports = [
             'reach(ed|ing)? out',
             'synerg(y|ize|ise)',
             'visionar(y|ies)'
+        ]
+    },
+
+
+    // Need to reassure
+    {
+        name: 'Need to reassure',
+        reason: 'Something feels off when you need to reassure someone of something that should definitely not be an issue in any workplace.',
+        solution: 'Reassess the need for these phrases.',
+        level: 'notice',
+        increment: {
+            culture: 1
+        },
+        triggers: [
+            'drama[ -]*free',
+            'stress[ -]*free'
         ]
     },
 
