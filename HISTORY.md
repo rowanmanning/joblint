@@ -1,6 +1,11 @@
 
 # History
 
+## 2.2.1 (2015-09-13)
+
+  * Add Node.js 4.0.0 support
+  * Update dependencies
+
 ## 2.2.0 (2015-07-07)
 
   * Add rule for "Need to reassure"
