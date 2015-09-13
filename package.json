@@ -25,8 +25,8 @@
         "wordwrap": "~1.0"
     },
     "devDependencies": {
-        "browserify": "10",
-        "jscs": "^1",
+        "browserify": "^11",
+        "jscs": "^2",
         "jshint": "^2",
         "mocha": "^2",
         "mockery": "~1.4",

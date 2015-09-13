@@ -6,8 +6,8 @@ VERSION=`node -e "process.stdout.write(require('./package.json').version)"`
 HOMEPAGE=`node -e "process.stdout.write(require('./package.json').homepage)"`
 
 # Group targets
-all: deps lint jscs test bundle
-ci: lint jscs test
+all: deps lint test bundle
+ci: lint test
 
 # Install dependencies
 deps:
@@ -15,7 +15,10 @@ deps:
 	@npm install
 
 # Lint JavaScript
-lint:
+lint: jshint jscs
+
+# Run JSHint
+jshint:
 	@echo "$(C_CYAN)> linting javascript$(C_RESET)"
 	@./node_modules/.bin/jshint . --config .jshintrc
 
