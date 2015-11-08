@@ -130,7 +130,7 @@ JavaScript Interface
 
 Joblint can run in either a web browser or Node.js. The supported versions are:
 
-  - Node.js 0.10, 0.12
+  - Node.js 0.10.x, 0.12.x, 4.x, 5.x
   - Android Browser 2.2+
   - Edge 0.11+
   - Firefox 26+
@@ -307,6 +307,6 @@ Copyright &copy; 2015, Rowan Manning
 [info-build]: https://travis-ci.org/rowanmanning/joblint
 [shield-dependencies]: https://img.shields.io/gemnasium/rowanmanning/joblint.svg
 [shield-license]: https://img.shields.io/badge/license-MIT-blue.svg
-[shield-node]: https://img.shields.io/badge/node.js%20support-0.10–4-brightgreen.svg
+[shield-node]: https://img.shields.io/badge/node.js%20support-0.10–5-brightgreen.svg
 [shield-npm]: https://img.shields.io/npm/v/joblint.svg
 [shield-build]: https://img.shields.io/travis/rowanmanning/joblint/master.svg
