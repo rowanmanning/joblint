@@ -1,6 +1,11 @@
 
 # History
 
+## 2.3.0 (2015-11-08)
+
+  * Add Node.js 5.0.0 support
+  * Add some additional rule triggers
+
 ## 2.2.1 (2015-09-13)
 
   * Add Node.js 4.0.0 support
