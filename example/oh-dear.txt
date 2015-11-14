@@ -2,7 +2,7 @@
 Sup.
 
 We'd like to hire a fucking awesome java script dude, please. A proper web ninja!
-If you're good at javascript then please apply and we can crush code together!
+If you're good at javascript and you're passionate about building awesome web sites then please apply and we can crush code together!
 
 Our site is damn sexy, it was all built with MS Frontpage originally but now we use Dreamweaver mostly. It's important to us that you're at the top of your game, we want to feel enlightened whenever we read your code.
 
