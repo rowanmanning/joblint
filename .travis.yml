@@ -1,11 +1,26 @@
 
-# Language/versions
+# Build matrix
 language: node_js
-node_js:
-  - "5"
-  - "4"
-  - "0.12"
-  - "0.10"
+matrix:
+  include:
+
+    # Run linter once
+    - node_js: '0.12'
+      env: LINT=true
+
+    # Run tests
+    - node_js: '0.10'
+    - node_js: '0.12'
+    - node_js: '4'
+    - node_js: '5'
+
+# Restrict builds on branches
+branches:
+  only:
+    - master
+    - /^\d+\.\d+\.\d+$/
 
 # Build script
-script: make ci
+script:
+  - 'if [ $LINT ]; then make lint; fi'
+  - 'if [ ! $LINT ]; then make test; fi'
