@@ -189,7 +189,7 @@ The `results` object that gets returned looks like this:
 
     // A list of issues with the job post
     issues: [
-        
+
         {
             name: String, // Short name for the rule that was triggered
             reason: String, // A longer description of why this rule was triggered
@@ -307,6 +307,6 @@ Copyright &copy; 2015, Rowan Manning
 [info-build]: https://travis-ci.org/rowanmanning/joblint
 [shield-dependencies]: https://img.shields.io/gemnasium/rowanmanning/joblint.svg
 [shield-license]: https://img.shields.io/badge/license-MIT-blue.svg
-[shield-node]: https://img.shields.io/badge/node.js%20support-0.10–5-brightgreen.svg
+[shield-node]: https://img.shields.io/badge/node.js%20support-0.10–6-brightgreen.svg
 [shield-npm]: https://img.shields.io/npm/v/joblint.svg
 [shield-build]: https://img.shields.io/travis/rowanmanning/joblint/master.svg
