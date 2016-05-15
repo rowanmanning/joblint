@@ -79,10 +79,8 @@ verify-spaces:
 
 verify-coverage:
 	@if [ -d coverage/lcov-report ] && [ -x $(NPM_BIN)/istanbul ]; then \
-		istanbul check-coverage --statement $(EXPECTED_COVERAGE) --branch $(EXPECTED_COVERAGE) --function $(EXPECTED_COVERAGE); \
-		$(TASK_DONE); \
+		istanbul check-coverage --statement $(EXPECTED_COVERAGE) --branch $(EXPECTED_COVERAGE) --function $(EXPECTED_COVERAGE) && $(TASK_DONE); \
 	fi
-
 
 # Test tasks
 # ----------
@@ -96,8 +94,7 @@ test-unit:
 test-unit-coverage:
 	@if [ -d test/unit ]; then \
 		if [ -x $(NPM_BIN)/istanbul ]; then \
-			istanbul cover $(NPM_BIN)/_mocha -- test/unit --recursive; \
-			$(TASK_DONE); \
+			istanbul cover $(NPM_BIN)/_mocha -- test/unit --recursive && $(TASK_DONE); \
 		else \
 			make test-unit; \
 		fi \
