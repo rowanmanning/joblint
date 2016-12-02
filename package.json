@@ -1,6 +1,6 @@
 {
   "name": "joblint",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Test tech job posts for issues with sexism, culture, expectations, and recruiter fails",
   "keywords": [
     "job",
