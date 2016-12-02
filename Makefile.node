@@ -21,14 +21,14 @@
 NPM_BIN = ./node_modules/.bin
 export PATH := $(NPM_BIN):$(PATH)
 export EXPECTED_COVERAGE := 90
+export INTEGRATION_TIMEOUT := 5000
+export INTEGRATION_SLOW := 4000
 
 
 # Output helpers
 # --------------
 
-C_GREEN=\x1b[32;01m
-C_RESET=\x1b[0m
-TASK_DONE = echo "$(C_GREEN)✓ $@ done$(C_RESET)"
+TASK_DONE = echo "✓ $@ done"
 
 
 # Group tasks
@@ -57,11 +57,14 @@ node_modules: package.json
 # Verify tasks
 # ------------
 
-verify: verify-javascript verify-spaces
+verify: verify-javascript verify-dust verify-spaces
 	@$(TASK_DONE)
 
 verify-javascript: verify-eslint verify-jshint verify-jscs
 	@$(TASK_DONE)
+
+verify-dust:
+	@if [ -e .dustmiterc ]; then dustmite --path ./view && $(TASK_DONE); fi
 
 verify-eslint:
 	@if [ -e .eslintrc ]; then eslint . && $(TASK_DONE); fi
@@ -101,7 +104,7 @@ test-unit-coverage:
 	fi
 
 test-integration:
-	@if [ -d test/integration ]; then mocha test/integration && $(TASK_DONE); fi
+	@if [ -d test/integration ]; then mocha test/integration --timeout $(INTEGRATION_TIMEOUT) --slow $(INTEGRATION_SLOW) && $(TASK_DONE); fi
 
 
 # Tooling tasks
