@@ -442,6 +442,20 @@ module.exports = [
         ]
     },
 
+    // Overly specific degree
+    {
+        name: 'Overly specific degree',
+        reason: 'Women are more likely than men to earn Bachelor of Arts degrees than Bachelor of Science degrees. Some schools offer only a BA degree (even in scientific fields), which is not necessarily less qualifying than a BS degree.',
+        solution: 'Use "Bachelor\'s degree" instead.',
+        level: 'warning',
+        increment: {
+            sexism: 1
+        },
+        triggers: [
+            'b[. ]?s',
+            'bachelor[\' ]?s of science'
+        ]
+    },
 
     // Mention of legacy technology
     {
@@ -571,17 +585,17 @@ var isPlainObject = function isPlainObject(obj) {
 	// Own properties are enumerated firstly, so to speed up,
 	// if last one is own, then all properties are own.
 	var key;
-	for (key in obj) {/**/}
+	for (key in obj) { /**/ }
 
 	return typeof key === 'undefined' || hasOwn.call(obj, key);
 };
 
 module.exports = function extend() {
-	var options, name, src, copy, copyIsArray, clone,
-		target = arguments[0],
-		i = 1,
-		length = arguments.length,
-		deep = false;
+	var options, name, src, copy, copyIsArray, clone;
+	var target = arguments[0];
+	var i = 1;
+	var length = arguments.length;
+	var deep = false;
 
 	// Handle a deep copy situation
 	if (typeof target === 'boolean') {
@@ -589,7 +603,8 @@ module.exports = function extend() {
 		target = arguments[1] || {};
 		// skip the boolean and the target
 		i = 2;
-	} else if ((typeof target !== 'object' && typeof target !== 'function') || target == null) {
+	}
+	if (target == null || (typeof target !== 'object' && typeof target !== 'function')) {
 		target = {};
 	}
 
@@ -628,7 +643,6 @@ module.exports = function extend() {
 	// Return the modified object
 	return target;
 };
-
 
 },{}]},{},[1])(1)
 });
