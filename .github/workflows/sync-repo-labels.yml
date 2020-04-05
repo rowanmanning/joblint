@@ -1,0 +1,9 @@
+on: [issues, pull_request]
+name: Sync repo labels
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rowanmanning/github-labels@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
