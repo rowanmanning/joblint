@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "chalk": "1.1",
-    "commander": "~2.8",
+    "commander": "~7.1",
     "extend": "~3.0",
     "pad-component": "0.0.1",
     "wordwrap": "~1.0"
