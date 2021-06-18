@@ -28,7 +28,7 @@
     "browserify": "^11",
     "jscs": "^2",
     "jshint": "^2",
-    "mocha": "^2",
+    "mocha": "^9",
     "mockery": "~1.4",
     "proclaim": "^3",
     "sinon": "^1",
