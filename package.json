@@ -32,7 +32,7 @@
     "mockery": "~1.4",
     "proclaim": "^3",
     "sinon": "^1",
-    "uglify-js": "^2"
+    "uglify-js": "^3"
   },
   "main": "./lib/joblint.js",
   "bin": {
