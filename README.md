@@ -1,4 +1,9 @@
 
+> **Warning**
+> Hiya :wave: Joblint is very much not under active development and shouldn't really be used. It was build in 2013 as a tool to help me analyse a job ads while I was job hunting and it's very naïve in both the way it's implemented and the kinds of issues it highlights.
+>
+> I don't recommend using Joblint for anything serious, but I'll be leaving it here as a bit of a historic artefact.
+
 Joblint
 =======
 
