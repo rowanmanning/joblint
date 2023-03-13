@@ -320,3 +320,20 @@ body {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
 }
+
+
+.site-warning {
+    font-size: 16px;
+    background-color: #ff0;
+    color: #000;
+    padding: 20px;
+
+    strong {
+        font-size: 24px;
+    }
+    p {
+        max-width: 600px;
+        margin: 0;
+        padding: 0;
+    }
+}
